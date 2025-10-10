@@ -39,16 +39,9 @@ def _normalize_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
     Convert form payload to a standard format
     """
     form_data = {
-        "company_name": payload.get("Company Name", ""),
-        "company_website": payload.get("Company Website", ""),
-        "client_product": payload.get("Client Product", ""),
-        "customer_industry": payload.get("Customer Industry", ""),
-        "crew_key": payload.get("crew_key", ""),
-        "core_differentiators": payload.get("Core Differentiators", ""),
-        "competitors": payload.get("Known Competitors", ""),
-        "report_focus": payload.get("Report Focus", ""),
-        "target_audience": payload.get("Target Audience", ""),
-        "industry": payload.get("Industry", "")
+        "product_category": payload.get("Product Category", ""),
+        "target_market_segments": payload.get("Target Market Segments", ""),
+        "target_geographies": payload.get("Target Geographies", "")
     }
 
     # Optional idempotency key if caller sends it
@@ -84,7 +77,7 @@ def forms_webhook():
     
         print("Got Through /forms-webhook")
 
-        run_personas()
+        run_personas(form_data)
   
         
         return jsonify({

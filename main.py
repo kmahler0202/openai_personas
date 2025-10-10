@@ -1,5 +1,8 @@
 from __future__ import annotations
+
 from openai import OpenAI
+from google import genai
+from google.genai import types
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -11,6 +14,7 @@ from md_2_gdoc import full_pipeline as convert_to_gdoc
 # ==============================================================
 
 client = OpenAI()
+gemini_client = genai.Client()
 
 def run_with_tools(system_prompt: str, user_prompt: str) -> str:
     """
@@ -28,6 +32,26 @@ def run_with_tools(system_prompt: str, user_prompt: str) -> str:
     return response.output_text
 
 
+def run_gemini_final(system_prompt: str, user_prompt: str) -> str:
+    """
+    Call Gemini 2.5 Pro to do the final consolidation.
+    Uses the google-generativeai client.
+    """
+    # Build contents list per Google API format
+    contents = [
+        types.Content(role="system", parts=[types.Part(text=system_prompt)]),
+        types.Content(role="user", parts=[types.Part(text=user_prompt)])
+    ]
+
+    # We could also pass a config, thinking budget etc. — here we use defaults
+    resp = gemini_client.models.generate_content(
+        model="gemini-2.5-pro",
+        contents=contents
+    )
+    # resp.text has the generated content
+    return resp.text
+
+
 # ==============================================================
 # Example Node (Industry Scope)
 # ==============================================================
@@ -36,18 +60,17 @@ def node_industry_scope(state: dict) -> dict:
     """industry_scoper"""
 
     sys_prompt = f"""
-    Map out the structure of the Automotive dealerships industry in the United States,
-    including the size of the industry as well as major ownership structures.
-    This should include both new and used market segments.
+    Map out the structure and dynamics of the {state.get("product_category")} industry selling into the 
+    {state.get("target_market_segments")} market segments in {state.get("target_geographies")}.
+    Include the sizeof the industry as well as the major competitors selling these products and services. 
+    Include any regulatory issues, the top 3-5 challenges influences the purchase of {state.get("product_category")} for {state.get("target_market_segments")}.
 
     Expected Output:
-    1–2 page brief on the industry context, including regulatory issues and the
-    top 3–5 challenges influencing the purchase of dealership software for running the dealership as well as for
-    merchandising both new and used cars.
+    1–2 page brief on the industry context in markdown format. Include sources and incorporate tables as needed.
     """
 
     user_prompt = (
-        "Create the brief now. Use the web_search tool to find relevant and current information. Generate an output in markdown"
+        "Create the brief now. Use the web_search tool to find relevant and current information. Generate in markdown."
     )
 
     md = run_with_tools(sys_prompt, user_prompt)
@@ -58,11 +81,11 @@ def node_map_stakeholders(state: dict) -> dict:
     """stake_holder_mapper"""
     sys_prompt = (
         f"""
-        Understanding the industry scoping information, identify the most common decision makers and decision influencers in the purchase of a used car valuation and market intelligence software.
+        Understanding the industry scoping information, identify the most common decision makers and decision influencers in the purchase of {state.get("product_category")}.
         Map their role, typical titles, and where they fit in the process (economic buyer, technical specifier, user, compliance gatekeeper, etc.).
 
         Expected Output:
-        Role Matrix(Titles, responsibilites, decision power, involvement stage) of the core buying committee as well as those contributing to it.
+        In markdown, a table of the role matrix(Titles, responsibilites, decision power, involvement stage) of the core buying committee as well as those contributing to it.
         """
     )
     user = (
@@ -96,10 +119,10 @@ def node_watering_holes(state: dict) -> dict:
     sys_prompt = (
         f"""
         For each role defined in the buying committee, research where each stakeholder goes for insight: media, analyst firms, standards bodies, trade associations, events, and digital channels.
-        Deliver a channel mapper per role (preferred trade pubs, conferences, online forums, social media platforms, newsletters, associations).
+        
 
         Expected Output:
-        In Markdown, a table of channels for each role.
+        In Markdown, Deliver a channel map per role (preferred trade pubs, conferences, online forums, social media platforms, newsletters, associations).
         """
     )
     user = (
@@ -157,22 +180,21 @@ def content_opportunities(state: dict) -> dict:
 
 
 def node_final_review(state: dict) -> dict:
-    """project_manager"""
-    sys_prompt = (
-        f"""Take all of the different deliverables from the buyer ecosystem and content strategy research done before 
-        you and simply consolidate it all into one markdown document. Use your context and just make it one big markdown document.
-        Do not leave out a single detail and do not add your own research. 
-        Clearly specifiy the deliverables by section """
+    sys = (
+        "Take all the different deliverables … consolidate into one markdown document. "
+        "Do not leave out a single detail and do not add your own research. "
+        "Clearly specify the deliverables by section."
+        "You may change the formatting as you see fit to make it look better. Changing sections, headers, tables, to make it look good inside of a google doc is what you should do."
     )
-    user = (
-        "## Industry Scope (Agent: industry_scoper)\n" + state.get("industry_scope_md", "(missing)") +
-        "\n\n## Stakeholder Map (Agent: stake_holder_mapper)\n" + state.get("stakeholders_md", "(missing)") +
-        "\n\n## Motivations & KPIs (Agent: motivator_and_kpi_analyst)\n" + state.get("motivations_md", "(missing)") +
-        "\n\n## Watering Holes (Agent: information_source_analyst)\n" + state.get("watering_holes_md", "(missing)") +
-        "\n\n## Buyer Journey (Agent: buying_journey_analyst)\n" + state.get("buyer_journey_md", "(missing)") +
-        "\n\n## Content Opportunities (Agent: content_opportunities)\n" + state.get("content_opportunities_md", "(missing)")
+    usr = (
+        "## Industry Scope (Agent: industry_scoper)\n" + state.get("industry_scope_md", "") +
+        "\n\n## Stakeholder Map …\n" + state.get("stakeholders_md", "") +
+        "\n\n## Motivations & KPIs …\n" + state.get("motivations_md", "") +
+        "\n\n## Watering Holes …\n" + state.get("watering_holes_md", "") +
+        "\n\n## Buyer Journey …\n" + state.get("buyer_journey_md", "") +
+        "\n\n## Content Opportunities …\n" + state.get("content_opportunities_md", "")
     )
-    md = run_with_tools(sys_prompt, user)
+    md = run_gemini_final(sys, usr)
     return {"final_review_md": md}
 
 
@@ -180,16 +202,11 @@ def node_final_review(state: dict) -> dict:
 # Run test
 # ==============================================================
 
-def run_personas():
+def run_personas(state: dict):
 
     print('Got to run_personas')
 
-    state = {
-        "customer_industry": "Automotive dealership Structures",
-        "client_product": "dealership software for running the delarship as well as for merchandising both new and used cars"
-    }
-
-    result = node_industry_scope({})
+    result = node_industry_scope(state)
     state["industry_scope_md"] = result["industry_scope_md"]
     print("Finished Industry Scope")
     
@@ -217,7 +234,7 @@ def run_personas():
     state["final_review_md"] = result["final_review_md"]
     print(state["final_review_md"])
 
-    convert_to_gdoc(state["final_review_md"], title="FULL PIPELINE ALL DELIVERABLES")
+    convert_to_gdoc(state["final_review_md"], title="FARO FULL PIPELINE WITH VARIABLES")
 
 
 
@@ -225,39 +242,9 @@ def run_personas():
 if __name__ == "__main__":
 
     state = {
-        "customer_industry": "Automotive dealership Structures",
-        "client_product": "dealership software for running the delarship as well as for merchandising both new and used cars"
+        "product_category": "the 3D Scanning, CMM, and Metrology Solutions industry",
+        "target_market_segments": "discrete manufacturing facilities",
+        "target_geographies": "global"
     }
-
-
-    # result = node_industry_scope({})
-    # state["industry_scope_md"] = result["industry_scope_md"]
-    # print("Finished Industry Scope")
-    
-    # result = node_map_stakeholders(state)
-    # state["stakeholders_md"] = result["stakeholders_md"]
-    # print("Finished Stakeholder Map")
-    
-    # result = node_motivations_kpis(state)
-    # state["motivations_md"] = result["motivations_md"]
-    # print("Finished Motivations & KPIs")
-    
-    # result = node_watering_holes(state)
-    # state["watering_holes_md"] = result["watering_holes_md"]
-    # print("Finished Watering Holes")
-    
-    # result = node_buyer_journey(state)
-    # state["buyer_journey_md"] = result["buyer_journey_md"]
-    # print("Finished Buyer Journey")
-    
-    # result = content_opportunities(state)
-    # state["content_opportunities_md"] = result["content_opportunities_md"]
-    # print("Finished Content Opportunities")
-    
-    # result = node_final_review(state)
-    # state["final_review_md"] = result["final_review_md"]
-    # print(state["final_review_md"])
-
-    # convert_to_gdoc(state["final_review_md"], title="OPENAI SDK PERSONA 10/6/25 MD2GDOC", render_images=False)
-    convert_to_gdoc('Test Test Test append this to gdoc', title="OPENAI SDK PERSONA 10/6/25 MD2GDOC")
+    run_personas(state)
 
