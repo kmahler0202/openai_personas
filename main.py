@@ -81,10 +81,14 @@ def node_map_stakeholders(state: dict) -> dict:
     sys_prompt = (
         f"""
         Understanding the industry scoping information, identify the most common decision makers and decision influencers in the purchase of {state.get("product_category")}.
-        Map their role, typical titles, and where they fit in the process (economic buyer, technical specifier, user, compliance gatekeeper, etc.).
+        Map their role, typical titles, where they fit in the process, and the decision weight they bear (economic buyer, technical specifier, user / operator, compliance gatekeeper, etc.).
 
         Expected Output:
-        In markdown, a table of the role matrix(Titles, responsibilites, decision power, involvement stage) of the core buying committee as well as those contributing to it.
+        In markdown, a section for each of the economic buyer, technical specifier, user /operator, compliance gatekeeper, as well as any more that you find relevant. each section should have
+        - who they are
+        - their typical titles
+        - where they fit in the process
+        - the decision weight they bear
         """
     )
     user = (
@@ -121,7 +125,7 @@ def node_watering_holes(state: dict) -> dict:
         
 
         Expected Output:
-        In Markdown, Deliver a channel map per role (preferred trade pubs, conferences, online forums, social media platforms, newsletters, associations).
+        In Markdown, Deliver a channel map per role (preferred trade pubs, conferences, online forums, social media platforms, newsletters, associations) Do not do this in a table.
         """
     )
     user = (
@@ -138,11 +142,11 @@ def node_buyer_journey(state: dict) -> dict:
     sys_prompt = (
         f"""
         For the core buying unit and for other defined decision influencers, outline how these roles interact through the typical buying cycle,
-        ie problem farming, -> requirements gathering, -> vendor educations and vendor shortlist, -> commercial purchase, -> rollout.
+        ie problem farming, -> requirements gathering, -> vendor educations and vendor shortlist, -> commercial purchase. Do NOT include rollout
         Identify precisely who leads, who influences, and who signs off at each stage.
 
         Expected Output:
-        In Markdown, a table of the buyer journey map (roles x stages of influence)
+        In Markdown, each stage of the buyer journey and information for which role leads it, influences it, and finally signs off. Do this for each of the stages in the typical buying cycle above.
         """
     )
     user = (
@@ -177,6 +181,28 @@ def content_opportunities(state: dict) -> dict:
     md = run_with_tools(sys_prompt, user)
     return {"content_opportunities_md": md}
 
+def node_competitor_benchmark_report(state: dict) -> dict:
+    """competitor_benchmark_report"""
+    sys_prompt = (
+        f"""
+        In the {state.get("product_category")} segment, review how competitors bechmark their channels and messaging. Deliver a competitor messages matrix (What role they target, proof points, formats, etc.)
+
+
+        Expected Output:
+        In Markdown, a competitor messages matrix (What role they target, proof points, formats)
+        """
+    )
+    user = (
+        "INDUSTRY SCOPE:\n" + state.get("industry_scope_md", "(missing)") +
+        "\n\nBUYING COMMITTEE:\n" + state.get("stakeholders_md", "(missing)") +
+        "\n\nMOTIVATIONS & KPIs:\n" + state.get("motivations_md", "(missing)") +
+        "\n\nWATERING HOLES:\n" + state.get("watering_holes_md", "(missing)") +
+        "\n\nBUYER JOURNEY:\n" + state.get("buyer_journey_md", "(missing)") +
+        "\n\nCONTENT OPPORTUNITIES:\n" + state.get("content_opportunities_md", "(missing)") +
+        "\n\nCreate the competitor benchmark report. Use the web_search tool to find relevant information if you need it."
+    )
+    md = run_with_tools(sys_prompt, user)
+    return {"competitor_benchmark_report_md": md}
 
 def node_final_review(state: dict) -> dict:
     sys = (
@@ -185,6 +211,8 @@ def node_final_review(state: dict) -> dict:
         "Clearly specify the deliverables by section."
         "You may change the formatting as you see fit to make it look better. Changing sections, headers, tables, to make it look good inside of a google doc is what you should do."
         "Include a section for sources at the bottom of the document. You should get these sources from the other deliverables."
+        "Also include a introdcutory page that includes a title, the date, a short overview of the entire document/report, and then a tables of contents"
+        "The tables of cotents should be formatted as so: \n\n## Table of Contents\n\nSECTION 1: Industry Scope\nSECTION 2: Stakeholder Map\nSECTION 3: Motivations & KPIs\nSECTION 4: Watering Holes\nSECTION 5: Buyer Journey\nSECTION 6: Content Opportunities\nSECTION 7: Competitor Benchmark Report\nSECTION 8: Sources (each section should be on their own line)"
     )
     usr = (
         "## Industry Scope (Agent: industry_scoper)\n" + state.get("industry_scope_md", "") +
@@ -192,10 +220,54 @@ def node_final_review(state: dict) -> dict:
         "\n\n## Motivations & KPIs …\n" + state.get("motivations_md", "") +
         "\n\n## Watering Holes …\n" + state.get("watering_holes_md", "") +
         "\n\n## Buyer Journey …\n" + state.get("buyer_journey_md", "") +
-        "\n\n## Content Opportunities …\n" + state.get("content_opportunities_md", "")
+        "\n\n## Content Opportunities …\n" + state.get("content_opportunities_md", "") +
+        "\n\n## Competitor Benchmark Report …\n" + state.get("competitor_benchmark_report_md", "")
     )
     md = run_gemini_final(sys, usr)
     return {"final_review_md": md}
+
+# -------------------------------------------------------------
+#  Email
+# -------------------------------------------------------------
+def send_email(doc_link, doc_id, email: str):
+    def send_email(doc_link, doc_id, email: str, creds):
+    """
+    Sends an email with the generated Google Doc link using the Gmail API.
+    """
+
+    # Create the message
+    subject = "Your AI-Generated Report is Ready!"
+    body = f"""
+    <html>
+      <body style="font-family: Arial, sans-serif;">
+        <h2>Your AI report is complete ✅</h2>
+        <p>Access your report here:</p>
+        <p><a href="{doc_link}" target="_blank">{doc_link}</a></p>
+        <p>Document ID: <code>{doc_id}</code></p>
+        <hr>
+        <small>Sent automatically by your AI report generator system.</small>
+      </body>
+    </html>
+    """
+
+    message = MIMEText(body, "html")
+    message["to"] = email
+    message["from"] = "me"   # 'me' means the authenticated user in Gmail API
+    message["subject"] = subject
+
+    # Base64 encode the message
+    raw_message = base64.urlsafe_b64encode(message.as_bytes()).decode()
+
+    # Create the Gmail service
+    service = build("gmail", "v1", credentials=creds)
+
+    # Send it
+    try:
+        sent = service.users().messages().send(userId="me", body={"raw": raw_message}).execute()
+        print(f"✅ Email sent successfully to {email}. Message ID: {sent['id']}")
+    except Exception as e:
+        print(f"❌ Failed to send email via Gmail API: {e}")
+    
 
 
 # ==============================================================
@@ -229,12 +301,20 @@ def run_personas(state: dict):
     result = content_opportunities(state)
     state["content_opportunities_md"] = result["content_opportunities_md"]
     print("Finished Content Opportunities")
+
+    result = node_competitor_benchmark_report(state)
+    state["competitor_benchmark_report_md"] = result["competitor_benchmark_report_md"]
+    print("Finished Competitor Benchmark Report")
     
     result = node_final_review(state)
     state["final_review_md"] = result["final_review_md"]
     print(state["final_review_md"])
 
-    convert_to_gdoc(state["final_review_md"], title="FARO FULL PIPELINE WITH VARIABLES")
+    conversion_result = convert_to_gdoc(state["final_review_md"], title="FARO FULL PIPELINE VISUAL UPDATE w/ GPT-5")
+    doc_link = conversion_result["webViewLink"]
+    doc_id = conversion_result["doc_id"]
+
+    send_email(doc_link, doc_id, state["email"])
 
 
 

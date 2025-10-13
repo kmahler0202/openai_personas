@@ -41,7 +41,8 @@ def _normalize_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
     form_data = {
         "product_category": payload.get("Product Category", ""),
         "target_market_segments": payload.get("Target Market Segments", ""),
-        "target_geographies": payload.get("Target Geographies", "")
+        "target_geographies": payload.get("Target Geographies", ""),
+        "email": payload.get("MX Email", "")
     }
 
     # Optional idempotency key if caller sends it
