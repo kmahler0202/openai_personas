@@ -77,6 +77,86 @@ def upload_markdown_as_doc(drive_service, md_path: Path, title: Optional[str]) -
 
 
 # ---------------------------------------------------------------------
+#  Helper: Insert Page Numbers
+# ---------------------------------------------------------------------
+def insert_page_numbers(docs_service, doc_id: str):
+    """
+    Inserts centered page numbers into the footer of the Google Doc.
+    """
+    try:
+        # --- Step 1: Create a footer and get its ID ---
+        # A footer must be created first before it can be edited.
+        requests = [
+            {
+                'createFooter': {
+                    'type': 'DEFAULT'
+                }
+            }
+        ]
+        # Execute the request to create the footer
+        result = docs_service.documents().batchUpdate(
+            documentId=doc_id, body={'requests': requests}).execute()
+        
+        # Get the ID of the new footer from the response
+        footer_id = result['replies'][0]['createFooter']['footerId']
+        print(f"📄 Footer created successfully with ID: {footer_id}")
+
+        # --- Step 2: Insert and center the page number ---
+        requests = [
+            # Insert the page number field. This uses an AutoText element.
+            {
+                'insertText': {
+                    'location': {
+                        'segmentId': footer_id,
+                        'index': 0
+                    },
+                    'text': '' # Inserting an empty string to create a paragraph for the AutoText
+                }
+            },
+            {
+                'createParagraphElements': {
+                    'range': {
+                        'segmentId': footer_id,
+                        'startIndex': 1,
+                        'endIndex': 1
+                    },
+                    'elements': [
+                        {
+                            'autoText': {
+                                'type': 'PAGE_NUMBER'
+                            }
+                        }
+                    ]
+                }
+            },
+            # Update the paragraph style to center the text
+            {
+                'updateParagraphStyle': {
+                    'range': {
+                        'segmentId': footer_id,
+                        'startIndex': 0,
+                        'endIndex': 1
+                    },
+                    'paragraphStyle': {
+                        'alignment': 'CENTER'
+                    },
+                    'fields': 'alignment'
+                }
+            }
+        ]
+        
+        # Execute the request to insert and format the page number
+        docs_service.documents().batchUpdate(
+            documentId=doc_id, body={'requests': requests}).execute()
+        
+        print("✅ Page numbers inserted and centered successfully.")
+
+    except HttpError as e:
+        # Handle cases where a footer might already exist or other API errors
+        print(f"⚠️ Failed to insert page numbers: {e}")
+
+
+# ---------------------------------------------------------------------
 #  Full Pipeline
 # ---------------------------------------------------------------------
 def full_pipeline(
@@ -123,6 +203,8 @@ def full_pipeline(
         doc_id = created["id"]
         web_view = created.get("webViewLink") or f"https://docs.google.com/document/d/{doc_id}/edit"
         print(f"🎉 Google Doc created: {web_view}")
+
+        insert_page_numbers(docs_service, doc_id)
 
         return {
             "doc_id": doc_id,

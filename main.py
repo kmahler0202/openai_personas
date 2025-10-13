@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from openai import OpenAI
+import os
+
 from google import genai
 from google.genai import types
 
@@ -14,7 +16,7 @@ from md_2_gdoc import full_pipeline as convert_to_gdoc
 # ==============================================================
 
 client = OpenAI()
-gemini_client = genai.Client()
+gemini_client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 def run_with_tools(system_prompt: str, user_prompt: str) -> str:
     """
@@ -22,7 +24,7 @@ def run_with_tools(system_prompt: str, user_prompt: str) -> str:
     Returns the model's textual reply.
     """
     response = client.responses.create(
-        model="gpt-5",
+        model="gpt-5-mini",
         tools=[{"type": "web_search"}],
         input=[
             {"role": "system", "content": system_prompt},
@@ -38,18 +40,15 @@ def run_gemini_final(system_prompt: str, user_prompt: str) -> str:
     Uses the google-generativeai client.
     """
     # Build contents list per Google API format
-    contents = [
-        types.Content(role="system", parts=[types.Part(text=system_prompt)]),
-        types.Content(role="user", parts=[types.Part(text=user_prompt)])
-    ]
-
-    # We could also pass a config, thinking budget etc. — here we use defaults
-    resp = gemini_client.models.generate_content(
+    response = gemini_client.models.generate_content(
         model="gemini-2.5-pro",
-        contents=contents
+        config=types.GenerateContentConfig(
+            system_instruction=system_prompt),
+        contents=user_prompt
     )
+    
     # resp.text has the generated content
-    return resp.text
+    return response.text
 
 
 # ==============================================================
@@ -185,6 +184,7 @@ def node_final_review(state: dict) -> dict:
         "Do not leave out a single detail and do not add your own research. "
         "Clearly specify the deliverables by section."
         "You may change the formatting as you see fit to make it look better. Changing sections, headers, tables, to make it look good inside of a google doc is what you should do."
+        "Include a section for sources at the bottom of the document. You should get these sources from the other deliverables."
     )
     usr = (
         "## Industry Scope (Agent: industry_scoper)\n" + state.get("industry_scope_md", "") +
@@ -241,10 +241,12 @@ def run_personas(state: dict):
 
 if __name__ == "__main__":
 
-    state = {
-        "product_category": "the 3D Scanning, CMM, and Metrology Solutions industry",
-        "target_market_segments": "discrete manufacturing facilities",
-        "target_geographies": "global"
-    }
-    run_personas(state)
+    # state = {
+    #     "product_category": "the 3D Scanning, CMM, and Metrology Solutions industry",
+    #     "target_market_segments": "discrete manufacturing facilities",
+    #     "target_geographies": "global"
+    # }
+    # run_personas(state)
+
+    convert_to_gdoc("Test Page Numbers", "Test pasge numbers test test")
 
