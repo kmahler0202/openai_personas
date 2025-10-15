@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 """
 Convert a Markdown file (text only) to a styled Google Doc using Google Drive’s
-native Markdown import.  This version removes all Mermaid/Kroki logic.
-
-Usage:
-  python md_to_gdoc_text.py input.md --title "My Google Doc"
+native Markdown import. Now also supports automatic sharing and email delivery.
 """
 
 import argparse
@@ -21,6 +18,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
 
+# >>> ADDED
 from email.mime.text import MIMEText
 import base64
 
@@ -28,6 +26,8 @@ import base64
 SCOPES = [
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/documents",
+    # >>> ADDED: Gmail send permission
+    "https://www.googleapis.com/auth/gmail.send",
 ]
 TOKEN_PATH = "token.json"
 CLIENT_SECRET = "credentials.json"
@@ -37,7 +37,7 @@ CLIENT_SECRET = "credentials.json"
 #  Google API Authentication
 # ---------------------------------------------------------------------
 def get_google_services():
-    """Authenticate and return Docs and Drive service clients."""
+    """Authenticate and return Docs, Drive, and Gmail service clients."""
     creds = None
     if os.path.exists(TOKEN_PATH):
         creds = Credentials.from_authorized_user_file(TOKEN_PATH, SCOPES)
@@ -56,16 +56,15 @@ def get_google_services():
 
     docs_service = build("docs", "v1", credentials=creds)
     drive_service = build("drive", "v3", credentials=creds)
-    return docs_service, drive_service
+    gmail_service = build("gmail", "v1", credentials=creds)  # >>> ADDED
+    return docs_service, drive_service, gmail_service
 
 
 # ---------------------------------------------------------------------
-#  Core: upload Markdown → Google Doc
+#  Upload Markdown → Google Doc
 # ---------------------------------------------------------------------
 def upload_markdown_as_doc(drive_service, md_path: Path, title: Optional[str]) -> Dict[str, Any]:
-    """
-    Upload a Markdown file to Google Drive and automatically convert it to a Google Doc.
-    """
+    """Upload a Markdown file to Google Drive and convert it to a Google Doc."""
     file_metadata = {
         "name": title or md_path.stem,
         "mimeType": "application/vnd.google-apps.document",
@@ -79,7 +78,54 @@ def upload_markdown_as_doc(drive_service, md_path: Path, title: Optional[str]) -
     return created
 
 
+# ---------------------------------------------------------------------
+#  >>> ADDED: Share Google Doc with recipient
+# ---------------------------------------------------------------------
+def share_document(drive_service, file_id: str, recipient_email: str, role="reader"):
+    """Grants the specified email access to the document."""
+    try:
+        permission = {
+            "type": "user",
+            "role": role,
+            "emailAddress": recipient_email,
+        }
+        drive_service.permissions().create(
+            fileId=file_id, body=permission, sendNotificationEmail=False
+        ).execute()
+        print(f"✅ Shared document with {recipient_email} ({role})")
+    except Exception as e:
+        print(f"⚠️ Could not share doc: {e}")
 
+
+# ---------------------------------------------------------------------
+#  >>> ADDED: Send Email via Gmail API
+# ---------------------------------------------------------------------
+def send_email_gmail_api(gmail_service, recipient_email: str, doc_link: str, doc_id: str):
+    """Sends a nicely formatted HTML email with the document link."""
+    subject = "Your AI-Generated Report is Ready!"
+    body = f"""
+    <html>
+      <body style="font-family: Arial, sans-serif;">
+        <h2>Your AI report is complete ✅</h2>
+        <p>You can view it here:</p>
+        <p><a href="{doc_link}" target="_blank">{doc_link}</a></p>
+        <p>Document ID: <code>{doc_id}</code></p>
+        <hr>
+        <small>Sent automatically by your AI Report Generator.</small>
+      </body>
+    </html>
+    """
+
+    message = MIMEText(body, "html")
+    message["to"] = recipient_email
+    message["subject"] = subject
+    raw = base64.urlsafe_b64encode(message.as_bytes()).decode()
+
+    try:
+        sent = gmail_service.users().messages().send(userId="me", body={"raw": raw}).execute()
+        print(f"📨 Email sent to {recipient_email} (Message ID: {sent['id']})")
+    except Exception as e:
+        print(f"❌ Failed to send email: {e}")
 
 
 # ---------------------------------------------------------------------
@@ -88,6 +134,7 @@ def upload_markdown_as_doc(drive_service, md_path: Path, title: Optional[str]) -
 def full_pipeline(
     content: str | Path,
     title: Optional[str] = None,
+    recipient_email: Optional[str] = None,  # >>> ADDED
 ) -> Dict[str, Any]:
     """
     End-to-end Markdown → Google Doc pipeline (text only).
@@ -97,9 +144,9 @@ def full_pipeline(
       2. Write temp Markdown file if input is inline text.
       3. Authenticate with Google.
       4. Upload via Drive and convert to a Google Doc.
-      5. Return metadata: {'doc_id', 'webViewLink', 'source'}
+      5. Optionally share with recipient + email them.
+      6. Return metadata: {'doc_id', 'webViewLink', 'source'}
     """
-    # Normalize input
     if isinstance(content, Path) or os.path.exists(str(content)):
         md_path = Path(str(content))
         raw_md = md_path.read_text(encoding="utf-8")
@@ -111,14 +158,12 @@ def full_pipeline(
         source = "<inline>"
         default_title = "Imported Markdown"
 
-    # Write temporary Markdown file if necessary
     with tempfile.NamedTemporaryFile("w", delete=False, suffix=".md", encoding="utf-8") as tf:
         tf.write(raw_md)
         tmp_md_path = Path(tf.name)
 
     try:
-        # Auth + upload
-        docs_service, drive_service = get_google_services()
+        docs_service, drive_service, gmail_service = get_google_services()
         print("✨ Creating Google Doc from Markdown...")
         created = upload_markdown_as_doc(
             drive_service,
@@ -130,6 +175,11 @@ def full_pipeline(
         web_view = created.get("webViewLink") or f"https://docs.google.com/document/d/{doc_id}/edit"
         print(f"🎉 Google Doc created: {web_view}")
 
+        # >>> ADDED: Share + Email Delivery
+        if recipient_email:
+            share_document(drive_service, doc_id, recipient_email, role="reader")
+            send_email_gmail_api(gmail_service, recipient_email, web_view, doc_id)
+
         return {
             "doc_id": doc_id,
             "webViewLink": web_view,
@@ -137,13 +187,10 @@ def full_pipeline(
         }
 
     finally:
-        # Clean up temporary file
         try:
             os.remove(tmp_md_path)
         except OSError:
             pass
-
-
 
 
 # ---------------------------------------------------------------------
@@ -155,6 +202,7 @@ def main():
     )
     parser.add_argument("input", help="Path to the input .md file")
     parser.add_argument("--title", help="Optional title for the Google Doc", default=None)
+    parser.add_argument("--email", help="Email address to share + notify", default=None)  # >>> ADDED
     args = parser.parse_args()
 
     md_path = Path(args.input)
@@ -162,7 +210,7 @@ def main():
         raise FileNotFoundError(f"Markdown file not found: {md_path}")
 
     try:
-        result = full_pipeline(md_path, args.title)
+        result = full_pipeline(md_path, args.title, recipient_email=args.email)
         print("\n✅ Done!")
         print(f"-> Open in browser: {result['webViewLink']}")
         print(f"📄 Document ID: {result['doc_id']}")

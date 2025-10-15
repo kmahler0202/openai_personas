@@ -225,48 +225,6 @@ def node_final_review(state: dict) -> dict:
     )
     md = run_gemini_final(sys, usr)
     return {"final_review_md": md}
-
-# -------------------------------------------------------------
-#  Email
-# -------------------------------------------------------------
-def send_email(doc_link, doc_id, email: str):
-    def send_email(doc_link, doc_id, email: str, creds):
-    """
-    Sends an email with the generated Google Doc link using the Gmail API.
-    """
-
-    # Create the message
-    subject = "Your AI-Generated Report is Ready!"
-    body = f"""
-    <html>
-      <body style="font-family: Arial, sans-serif;">
-        <h2>Your AI report is complete ✅</h2>
-        <p>Access your report here:</p>
-        <p><a href="{doc_link}" target="_blank">{doc_link}</a></p>
-        <p>Document ID: <code>{doc_id}</code></p>
-        <hr>
-        <small>Sent automatically by your AI report generator system.</small>
-      </body>
-    </html>
-    """
-
-    message = MIMEText(body, "html")
-    message["to"] = email
-    message["from"] = "me"   # 'me' means the authenticated user in Gmail API
-    message["subject"] = subject
-
-    # Base64 encode the message
-    raw_message = base64.urlsafe_b64encode(message.as_bytes()).decode()
-
-    # Create the Gmail service
-    service = build("gmail", "v1", credentials=creds)
-
-    # Send it
-    try:
-        sent = service.users().messages().send(userId="me", body={"raw": raw_message}).execute()
-        print(f"✅ Email sent successfully to {email}. Message ID: {sent['id']}")
-    except Exception as e:
-        print(f"❌ Failed to send email via Gmail API: {e}")
     
 
 
@@ -310,13 +268,8 @@ def run_personas(state: dict):
     state["final_review_md"] = result["final_review_md"]
     print(state["final_review_md"])
 
-    conversion_result = convert_to_gdoc(state["final_review_md"], title="FARO FULL PIPELINE VISUAL UPDATE w/ GPT-5")
-    doc_link = conversion_result["webViewLink"]
-    doc_id = conversion_result["doc_id"]
-
-    send_email(doc_link, doc_id, state["email"])
-
-
+    convert_to_gdoc(state["final_review_md"], title="FARO FULL PIPELINE VISUAL UPDATE w/ GPT-5", recipient_email=state["email"])
+    
 
 
 if __name__ == "__main__":
