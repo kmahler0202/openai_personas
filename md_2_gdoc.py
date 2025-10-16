@@ -100,16 +100,36 @@ def share_document(drive_service, file_id: str, recipient_email: str, role="read
 # ---------------------------------------------------------------------
 #  >>> ADDED: Send Email via Gmail API
 # ---------------------------------------------------------------------
-def send_email_gmail_api(gmail_service, recipient_email: str, doc_link: str, doc_id: str):
-    """Sends a nicely formatted HTML email with the document link."""
+def send_email_gmail_api(gmail_service, recipient_email: str, doc_link: str, doc_id: str, state: dict):
+    """Sends a nicely formatted HTML email with the document link and metadata."""
+
     subject = "Your AI-Generated Report is Ready!"
     body = f"""
     <html>
       <body style="font-family: Arial, sans-serif;">
-        <h2>Your AI report is complete ✅</h2>
+        <h2>✅ Your AI Report is Complete</h2>
+
         <p>You can view it here:</p>
         <p><a href="{doc_link}" target="_blank">{doc_link}</a></p>
-        <p>Document ID: <code>{doc_id}</code></p>
+        <p><strong>Document ID:</strong> <code>{doc_id}</code></p>
+
+        <hr>
+
+        <h3>📊 Report Inputs</h3>
+        <ul>
+          <li><strong>Client:</strong> {state.get("client")}</li>
+          <li><strong>Product Category:</strong> {state.get("product_category")}</li>
+          <li><strong>Target Market Segments:</strong> {state.get("target_market_segments")}</li>
+          <li><strong>Target Geographies:</strong> {state.get("target_geographies")}</li>
+        </ul>
+
+        <h3>⚙️ Generation Info</h3>
+        <ul>
+          <li><strong>Model Used:</strong> {state.get("model_used")}</li>
+          <li><strong>Total Cost:</strong> ${state.get("total_cost"): .4f} USD</li>
+          <li><strong>Runtime:</strong> {state.get("runtime_human")}</li>
+        </ul>
+
         <hr>
         <small>Sent automatically by your AI Report Generator.</small>
       </body>
@@ -119,11 +139,12 @@ def send_email_gmail_api(gmail_service, recipient_email: str, doc_link: str, doc
     message = MIMEText(body, "html")
     message["to"] = recipient_email
     message["subject"] = subject
+
     raw = base64.urlsafe_b64encode(message.as_bytes()).decode()
 
     try:
         sent = gmail_service.users().messages().send(userId="me", body={"raw": raw}).execute()
-        print(f"📨 Email sent to {recipient_email} (Message ID: {sent['id']})")
+        print(f"📧 Email sent to {recipient_email} (Message ID: {sent['id']})")
     except Exception as e:
         print(f"❌ Failed to send email: {e}")
 
@@ -135,13 +156,12 @@ def full_pipeline(
     content: str | Path,
     title: Optional[str] = None,
     recipient_email: Optional[str] = None,  # >>> ADDED
+    state: Optional[dict] = None,  # >>> ADDED
 ) -> Dict[str, Any]:
     """
     End-to-end Markdown → Google Doc pipeline (text only).
 
     Steps:
-      1. Accept raw Markdown string or a path.
-      2. Write temp Markdown file if input is inline text.
       3. Authenticate with Google.
       4. Upload via Drive and convert to a Google Doc.
       5. Optionally share with recipient + email them.
@@ -177,8 +197,8 @@ def full_pipeline(
 
         # >>> ADDED: Share + Email Delivery
         if recipient_email:
-            share_document(drive_service, doc_id, recipient_email, role="reader")
-            send_email_gmail_api(gmail_service, recipient_email, web_view, doc_id)
+            share_document(drive_service, doc_id, recipient_email, role="owner")
+            send_email_gmail_api(gmail_service, recipient_email, web_view, doc_id, state)
 
         return {
             "doc_id": doc_id,

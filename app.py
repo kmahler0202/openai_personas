@@ -42,7 +42,8 @@ def _normalize_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
         "product_category": payload.get("Product Category", ""),
         "target_market_segments": payload.get("Target Market Segments", ""),
         "target_geographies": payload.get("Target Geographies", ""),
-        "email": payload.get("MX Email", "")
+        "email": payload.get("MX Email", ""),
+        "client": payload.get("Client", "")
     }
 
     # Optional idempotency key if caller sends it
@@ -77,6 +78,8 @@ def forms_webhook():
 
     
         print("Got Through /forms-webhook")
+
+        print(form_data)
 
         run_personas(form_data)
   
