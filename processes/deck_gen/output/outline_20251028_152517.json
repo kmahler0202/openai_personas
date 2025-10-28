@@ -1,0 +1,57 @@
+{
+  "deck_meta": {
+    "title": "Dogs - The Future of MX",
+    "author": "Kyle Mahler",
+    "date": "2025-10-28",
+    "brand": "MX"
+  },
+  "deck_slides": [
+    {
+      "layout_name": "Team Background, White Text, Title Slide",
+      "master_index": 0,
+      "layout_index": 0,
+      "placeholders": {
+        "title_main": "Dogs - The Future of MX",
+        "subtitle": "Why MX should hire dogs",
+        "todays_date": "2025-10-28"
+      }
+    },
+    {
+      "layout_name": "B&W Background, B&W Text, Numbered List",
+      "master_index": 0,
+      "layout_index": 8,
+      "placeholders": {
+        "title_main": "Agenda",
+        "body_bullets": "Why dogs belong at MX\nRoles & training\nBusiness benefits\nPilot & next steps"
+      }
+    },
+    {
+      "layout_name": "Black Background, White Text, Statement Slide w/ Subtitle",
+      "master_index": 0,
+      "layout_index": 12,
+      "placeholders": {
+        "title_main": "Dogs boost engagement",
+        "subtitle": "Higher morale, better retention"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Text, Title and Content w/ Right Picture",
+      "master_index": 0,
+      "layout_index": 38,
+      "placeholders": {
+        "title_main": "Roles & training",
+        "content": "Front-desk ambassadors, scheduled therapy visits, and morale support.\nTraining: onboarding, certification, behavior plans.\nMetrics: engagement, retention, productivity.",
+        "picture_right": ""
+      }
+    },
+    {
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 23,
+      "placeholders": {
+        "title_main": "Next steps",
+        "body_bullets": "Launch a 3-month pilot\nHire certified trainers & handlers\nMeasure engagement, retention, productivity\nReport findings and scale"
+      }
+    }
+  ]
+}

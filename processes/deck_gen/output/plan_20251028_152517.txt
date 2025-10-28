@@ -1,0 +1,88 @@
+Plan for 5‑slide deck — "How MX should hire dogs as future employees"
+
+High-level guidance
+- Tone: playful but credible — balance personality (photos, short anecdotes) with practical policy next steps and measurable outcomes.
+- Visuals: use one high‑quality office dog photo (for cover or content slide), one lifestyle/workplace image for the roles slide. Maintain brand color contrast; keep text short and bold.
+- Deliverables: slide files filled into the template placeholders listed below. I call out exact layout_key and placeholder names so you can paste text/assets directly.
+
+Slide 1 — Cover
+- Layout to use: Team Background, White Text, Title Slide (layout_key: title_only)
+- Placeholders to fill:
+  - title_main: "Hire Dogs as MX Employees" (26 characters — within 45 char guardrail)
+  - subtitle: "A playful plan for productivity" (29 characters — within 40 char guardrail)
+  - todays_date: "Oct 28, 2025" (date field required)
+- Visual guidance: team‑branded background (photo of MX team + dogs optional). Keep cover photo high contrast so white text is readable.
+- Speaker note: One‑line opener: "Today I’ll make the case for employing dogs in specific, measurable roles that boost wellbeing and business metrics."
+
+Slide 2 — Core thesis (key claim)
+- Layout to use: Black Background, White Text, Statement Slide w/ Subtitle (layout_key: black_background_white_text_statement_slide_w_subtitle)
+- Placeholders to fill:
+  - title_main: "Dogs improve work outcomes" (26 characters — within 45 char guardrail)
+  - subtitle: "Reduce stress, increase engagement" (34 characters — within 40 char guardrail)
+- Visual guidance: dark, bold background — think single strong statement slide with plenty of negative space so the claim lands.
+- Speaker note: Summarize evidence quickly: cite studies on therapy animals, list expected KPIs (stress down, engagement up, voluntary turnover down).
+
+Slide 3 — Top benefits (3-column)
+- Layout to use: White Background, Black Text, Three Column Comparison (Bulleted) (layout_key: comparison_4)
+- Placeholders to fill:
+  - title_main: "Top Benefits"
+  - content_left_bullets (left column)
+    - Suggested bullets:
+      1. Lower stress
+      2. Fewer sick days
+      3. Faster recovery from burnout
+  - content_middle_bullets (middle column)
+    - Suggested bullets:
+      1. Stronger team bonds
+      2. Increased engagement
+      3. Better cross‑team interactions
+  - content_right_bullets (right column)
+    - Suggested bullets:
+      1. Talent magnet & PR
+      2. Customer delight moments
+      3. Measurable retention uplift
+- Notes on copy: keep bullets short (single lines). If the slide design supports headings for each column, use "Wellbeing", "Culture", "Business" as small headers; otherwise make the top bullet act as the header line (bold).
+- Speaker note: For each column, give one quick data point or anecdote (e.g., pilot metrics from other companies, internal survey results).
+
+Slide 4 — Roles & policy (visual)
+- Layout to use: White Background, Black Text, Title and Content w/ Right Picture (layout_key: title_and_content_5)
+- Placeholders to fill:
+  - title_main: "Roles & Policies"
+  - content:
+    - Bullet 1: "Pilot roles: therapy, greeter, research partner"
+    - Bullet 2: "Onboarding: vaccines, temperament test, handler training"
+    - Bullet 3: "Clear behavior, sanitation & insurance rules"
+  - picture_right: image asset (see below)
+- Image recommendation (picture_right): professional photo of a well‑behaved dog in an office setting (filename example: office_dog_2.jpg). Provide alt text: "Well‑groomed dog sitting by an office desk."
+- Compliance note: include HR and legal sign‑off in pilot — liability/insurance and ADA intersection must be handled.
+- Speaker note: Walk through a sample day for each role and how handlers interact with people and spaces.
+
+Slide 5 — Immediate next steps (numbered plan)
+- Layout to use: B&W Background, B&W Text, Numbered List (layout_key: b_w_background_b_w_text_numbered_list)
+- Placeholders to fill:
+  - title_main: "Next" (4 characters — meets 6‑character max guardrail)
+  - body_bullets (numbered list — keep each item ≤25 chars per guardrail)
+    1. "Run 6‑week pilot"
+    2. "Define roles & rules"
+    3. "Vet & insurance check"
+    4. "Train volunteers"
+    5. "Measure morale & churn"
+    6. "Scale if positive"
+- Visual guidance: use the numbered style on this layout to show clear action steps. Keep it concise.
+- Speaker note: Call out owners and a rough timeline (owner: People Ops; timeline: start Q1 pilot within 8 weeks) and the success criteria (≥X point improvement in morale survey, net retention increase).
+
+Optional additions & accessibility
+- Alt text: Add alt text to all images (short descriptive sentences).
+- Data slides: If you add quantitative evidence later, use Title and Chart (layout_key: white_background_black_text_title_and_chart).
+- Legal/HR slide (if you extend beyond 5 slides): use Content (Non‑Bulleted) w/ Footnote (layout_key: white_background_black_test_content_non_bulleted_w_footnote) to include citations, insurance contacts, and ADA considerations.
+
+Final production checklist before sharing
+- Verify all title fields meet the character guardrails listed per layout.
+- Supply two image files: office_dog_cover.jpg (cover/team background) and office_dog_action.jpg (roles slide). Ensure images have safe margins (see layout All Picture guardrails).
+- Get People Ops and Legal to review the Roles & Policies slide before presenting externally.
+- Add 1‑sentence speaker notes under each slide for the presenter.
+
+If you want, I can:
+- Produce concise speaker notes for each slide,
+- Draft the exact text to paste into each template placeholder (with character counts),
+- Or create two alternative cover options (black, white) and advise which to pick depending on audience (executive vs informal). Which would you prefer next?

@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 from main import run_personas
 
 from processes.deck_gen.generate_deck import run_deck_generation
+from services import get_google_services, send_deck_with_attachment
 
 # Your modules (from earlier messages)
 # from crew_runner import run_buyer_ecosystem_crew
@@ -86,8 +87,34 @@ def forms_webhook():
         if(desired_tool == "Buyer Ecosystem, Personas, and Content Reccomendations"):
             run_personas(form_data)
         elif(desired_tool == "Deck Generation"):
-            run_deck_generation(form_data["deck_description"])
-
+            # Generate the deck
+            result = run_deck_generation(form_data["deck_description"])
+            
+            # Check if deck generation was successful
+            if result.get("success"):
+                # Get Google services for email
+                _, _, gmail_service = get_google_services()
+                
+                # Send email with PowerPoint attachment
+                recipient_email = form_data.get("email")
+                if recipient_email:
+                    try:
+                        send_deck_with_attachment(
+                            gmail_service=gmail_service,
+                            recipient_email=recipient_email,
+                            pptx_path=result["pptx_path"],
+                            deck_title="Dogs - The Future of MX",
+                            deck_description=form_data["deck_description"]
+                        )
+                        print(f"✅ Deck emailed to {recipient_email}")
+                    except Exception as email_error:
+                        print(f"⚠️ Deck generated but email failed: {email_error}")
+                        # Don't fail the whole request if email fails
+                else:
+                    print("⚠️ No email provided, skipping email notification")
+            else:
+                print(f"❌ Deck generation failed: {result.get('error')}")
+                return jsonify({"error": result.get("error")}), 500
         
         return jsonify({
             "status": "success"         
