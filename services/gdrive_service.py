@@ -83,7 +83,7 @@ def share_document(
     drive_service,
     file_id: str,
     recipient_email: str,
-    role: str = "reader"
+    role: str = "owner"
 ) -> None:
     """
     Share a Google Drive document with a specific user.
@@ -92,7 +92,7 @@ def share_document(
         drive_service: Authenticated Google Drive API service client
         file_id: Google Drive file ID
         recipient_email: Email address to share with
-        role: Permission role - "reader", "writer", or "owner"
+        role: Permission role - "reader", "writer", or "owner" (default: "owner")
     
     Raises:
         Exception: If sharing fails
@@ -107,7 +107,7 @@ def share_document(
         drive_service.permissions().create(
             fileId=file_id,
             body=permission,
-            sendNotificationEmail=False
+            transferOwnership=True,
         ).execute()
         
         print(f"✅ Shared document with {recipient_email} ({role})")

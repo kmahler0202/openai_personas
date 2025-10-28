@@ -8,14 +8,9 @@ from typing import Dict, Any, List, Optional
 from flask import Flask, request, jsonify
 from dotenv import load_dotenv
 
-from main import run_personas
-
+from processes.persona_gen import run_persona_generation
 from processes.deck_gen.generate_deck import run_deck_generation
 from services import get_google_services, send_deck_with_attachment
-
-# Your modules (from earlier messages)
-# from crew_runner import run_buyer_ecosystem_crew
-# from google_docs import create_doc_with_content
 
 # ---------- Bootstrap ----------
 load_dotenv()
@@ -85,7 +80,14 @@ def forms_webhook():
         desired_tool = form_data.get("tool", "")
 
         if(desired_tool == "Buyer Ecosystem, Personas, and Content Reccomendations"):
-            run_personas(form_data)
+            # Generate the persona report
+            result = run_persona_generation(form_data)
+            
+            # Check if generation was successful
+            if not result.get("success"):
+                print(f"❌ Persona generation failed: {result.get('error')}")
+                return jsonify({"error": result.get("error")}), 500
+                
         elif(desired_tool == "Deck Generation"):
             # Generate the deck
             result = run_deck_generation(form_data["deck_description"])
