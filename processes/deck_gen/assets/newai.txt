@@ -1,0 +1,62 @@
+I need a deck to present to my 2 bosses on the AI team at my agency to basically sell the idea that we need to 
+create a new framework for how we handl AI in our agency. I have laid out four different sections that I wll paste below with some major points to cover below them.
+
+Section 1: The initial initiative 
+
+The pillars and agile movement (there were 5 pillars)
+
+Current status 
+
+Section 2: Learnings over the last 5 months 
+
+AI changing rapidly 
+
+Meetings with peer group 
+
+Sophistication of team 
+
+Agent and Gem thinking and tools 
+
+Competitive research – ai native vs. not in agency ecosystem 
+
+Convos with senior stakeholders 
+
+Your own schedule and “busy-ness” 
+
+Section 3: How we might iterate the vision 
+
+More explicit definition on what we need from ai to be competitive 
+
+Blah, Blah 
+
+Section 4:The path forward 
+
+AI becomes a more formal ongoing process, maybe led by me 
+
+Champion within each department 
+
+Work with champions on the dev of tools and gems 
+
+Auditing people’s AI knowledge – build on the initial survey and get way more detail 
+
+Maybe make this in-person by department? 
+
+Possibly lead off with examples of how AI is already being used to disrupt that dept. 
+
+Method of AI “bookkeeping” 
+
+Aware of what we use 
+
+Monitor AI usage 
+
+Custom tools 
+
+Develop hit list of possibilities 
+
+Develop plan for each priority 
+
+Plan for evaluating what is built 
+
+Plan for iterating 
+
+More formal sharing of relevant AI news (weekly?) to keep people engaged 

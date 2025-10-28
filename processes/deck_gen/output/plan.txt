@@ -1,0 +1,242 @@
+Below is a human‑readable, slide‑by‑slide plan for your deck. For each slide, I recommend the best-fit layout from your template, explain why, and specify exactly what to place in each text/image placeholder (respecting the guardrails and character limits).
+
+1) Cover
+- Layout: Team Background, White Text, Title Slide (master 0, layout 0)
+- Why: Internal/executive opener; includes date.
+- Placeholders and content:
+  - title_main (≤45): Reframing Our AI Operating Model
+  - subtitle (≤40): Proposal for a scalable framework
+  - todays_date: October 27, 2025
+
+2) Opening thesis
+- Layout: Black Background, White Text, Statement Slide w/ Subtitle (0, 12)
+- Why: Set the stakes in one bold thought with context.
+- Placeholders and content:
+  - title_main (≤45): We need an agency‑wide AI framework
+  - subtitle (≤40): To compete, reduce risk, and ship faster
+
+3) Agenda
+- Layout: B&W Background, B&W Text, Numbered List (0, 8)
+- Why: Clean, numbered TOC; fits four sections.
+- Guardrails: Title ≤6 chars; ≤6 items; ≤25 chars/item.
+- Placeholders and content:
+  - title_main (≤6): Agenda
+  - body_bullets (≤25 chars each):
+    1) Initiative recap
+    2) 5‑month learnings
+    3) Iterate vision
+    4) Path forward
+
+Section 1: The initial initiative
+
+4) Section divider
+- Layout: Black Background, White Text, Statement Slide (0, 10)
+- Why: Clear section break.
+- Placeholders and content:
+  - title_main (≤45): 1) The initial initiative
+
+5) Initiative overview
+- Layout: White Background, Black Text, Content (Non-Bulleted) (0, 20)
+- Why: Short narrative on intent and setup.
+- Guardrails: Title ≤30; must have title.
+- Placeholders and content:
+  - title_main (≤30): What we set out to do
+  - body_non_bullets: In early 2025 we launched an agile AI initiative organized around five pillars to pilot use-cases, de-risk experimentation, and inform a scalable operating model. We formed a lightweight working group, defined sprint cadences, and aligned on success metrics to guide investment.
+
+6) The five pillars (with maturity)
+- Layout: White Background, Black Text, Title and Table (0, 29)
+- Why: Table communicates pillars + descriptors + owner + maturity at a glance.
+- Placeholders and content:
+  - title_main: The five pillars
+  - subtitle (optional): What, why, owner, maturity
+  - content_table: Columns: Pillar | Purpose | Example Use‑Case | Owner | Maturity (1–5)
+    - Row examples (replace with your real pillars):
+      - Research/Insights | Faster synthesis | Brief mining | [Name] | 2
+      - Creative Assist | Concept velocity | Ad comps | [Name] | 3
+      - Production Ops | Throughput | Versioning | [Name] | 2
+      - Data & Models | Quality & control | Prompt libs | [Name] | 2
+      - Governance | Risk & standards | Review gates | [Name] | 1
+
+7) Planned vs. current
+- Layout: B&W Split Background, Before-After w/ 1 Text Box Each (0, 17)
+- Why: Side-by-side view of intention vs. reality.
+- Guardrails: Column titles ≤15 chars; balanced text.
+- Placeholders and content:
+  - title_left: Planned
+  - body_left: 5 pillar sprints; simple KPIs; shared playbook; lightweight governance; phased tooling.
+  - title_right: Current
+  - body_right: Uneven pillar progress; ad‑hoc metrics; pockets of great practice; limited standards; tooling sprawl risk.
+
+Section 2: Learnings over the last 5 months
+
+8) Section divider
+- Layout: Black Background, White Text, Statement Slide (0, 10)
+- Placeholders and content:
+  - title_main (≤45): 2) Learnings: last 5 months
+
+9) External signals
+- Layout: White Background, Black Text, Two Titles two Content Boxes (Non-Bulleted) w/ Header (0, 37)
+- Why: Organize external insights into two lanes.
+- Placeholders and content:
+  - header: External signals
+  - title_main_left: Market pace
+  - content_left_non_bullets: Model releases are accelerating; quality leaps (multimodal, agents); rapid commoditization of basic tasks.
+  - title_main_right: Ecosystem
+  - content_right_non_bullets: Peer agency touchpoints; client expectations rising; AI‑native competitors redefining scope and speed.
+
+10) Internal realities
+- Layout: White Background, Black Text, Two Titles two Content Boxes (Non-Bulleted) w/ Header (0, 37)
+- Why: Synthesize internal learnings into people/process.
+- Placeholders and content:
+  - header: Internal realities
+  - title_main_left: People & skills
+  - content_left_non_bullets: Team sophistication varies; promising agent/gem experiments; appetite for guidance and reusable patterns.
+  - title_main_right: Ways of working
+  - content_right_non_bullets: Senior stakeholder interest; need clearer guardrails; my bandwidth constraints expose need for formal program.
+
+11) Competitive landscape
+- Layout: White Background, Black Text, Three Column Comparison (Non-Bulleted) (0, 33)
+- Why: Show three competitor types.
+- Placeholders and content:
+  - title_main: Competitive landscape
+  - content_left_non_bullets: AI‑Native Firms: Productized accelerators; specialized talent; faster cycles; narrow but deep offerings.
+  - content_middle_non_bullets: Hybrid Agencies: Blending AI into workflows; emerging governance; advantage where change mgmt is strong.
+  - content_right_non_bullets: Traditional Agencies: Case‑by‑case pilots; slower standardization; risk of margin compression.
+
+Section 3: How we might iterate the vision
+
+12) Section divider
+- Layout: Black Background, White Text, Statement Slide w/ Subtitle (0, 12)
+- Placeholders and content:
+  - title_main (≤45): 3) Iterating the vision
+  - subtitle (≤40): Sharper, measurable, and pragmatic
+
+13) Competitive “needs” from AI
+- Layout: B&W Background, B&W Text, Numbered List (0, 8)
+- Why: Crisp, prioritized asks; ≤6‑char title fits.
+- Placeholders and content:
+  - title_main (≤6): Needs
+  - body_bullets (≤25 chars each):
+    1) Speed to value
+    2) Quality uplift
+    3) Cost leverage
+    4) Risk control
+    5) Differentiation
+
+14) Vision 2.0: pillars
+- Layout: White Background, Black Text, Three Column Comparison (Non-Bulleted) w/ Header (0, 36)
+- Why: Three durable pillars under a header theme.
+- Placeholders and content:
+  - header: Vision 2.0
+  - title_main: Three pillars
+  - content_left_non_bullets: Governance: Standards, approvals, data/privacy controls, vendor policy, model usage guidelines.
+  - content_middle_non_bullets: Capabilities: Skills ladder, prompts/patterns, agent/gem library, training pathways, QA.
+  - content_right_non_bullets: Products: Reusable tools, client‑facing accelerators, packaged services, measurement.
+
+Section 4: The path forward
+
+15) Section divider
+- Layout: Black Background, White Text, Statement Slide (0, 10)
+- Placeholders and content:
+  - title_main (≤45): 4) The path forward
+
+16) Operating model
+- Layout: White Background, Black Text, Two Titles two Content Boxes (Non-Bulleted) w/ Header (0, 37)
+- Why: Clarify roles and org pattern.
+- Placeholders and content:
+  - header: Operating model
+  - title_main_left: Program lead
+  - content_left_non_bullets: Formal ongoing program led by me; set roadmap; define standards; report outcomes.
+  - title_main_right: Dept champions
+  - content_right_non_bullets: One champion per department; co‑design tools/gems; gather use‑cases; drive adoption.
+
+17) Rollout plan (tracks)
+- Layout: White Background, Black Text, Three Column Comparison (Bulleted) (0, 34)
+- Why: Three concurrent tracks with bullets.
+- Placeholders and content:
+  - title_main: Rollout plan
+  - content_left_bullets:
+    - Audit
+    - Deep skills survey
+    - Tool inventory
+  - content_middle_bullets:
+    - Educate
+    - In‑person by dept
+    - Playbooks + demos
+  - content_right_bullets:
+    - Equip
+    - Gems/tools build
+    - Onboarding
+
+18) Knowledge audit (detail)
+- Layout: White Background, Black Text, Title and Table (0, 29)
+- Why: Define fields to capture and manage.
+- Placeholders and content:
+  - title_main: Knowledge audit
+  - subtitle: Depth by role and use‑case
+  - content_table: Columns: Role | Use‑Cases | Tool Familiarity | Prompting Level | Data Sensitivity | Training Needs | Manager
+    - Add 1–2 sample rows to illustrate structure.
+
+19) Workshops by department
+- Layout: White Background, Black Text, Title and Content w/ Right Picture (0, 38)
+- Why: Show in‑person format + illustrative visual.
+- Placeholders and content:
+  - title_main: In‑person workshops (by dept)
+  - content: Agenda: Disruption examples; hands‑on with gems; live prompt labs; role‑specific playbooks; next‑step commitments.
+  - picture_right: Photo of team workshop or a screenshot of a sample departmental playbook.
+
+20) AI bookkeeping & monitoring
+- Layout: White Background, Black Text, Title and Table (0, 29)
+- Why: Make tracking explicit for compliance and ROI.
+- Placeholders and content:
+  - title_main: AI bookkeeping & monitoring
+  - subtitle: What we use, why, and how it performs
+  - content_table: Columns: Tool | Owner | Purpose | Data Risk | Usage Metric | Last Review | Notes
+    - Add example row (e.g., “Gem X | Creative | Concepting | Low | Weekly active users | Oct ’25 | v1.2”).
+
+21) Custom tools pipeline
+- Layout: B&W Background, B&W Text, Numbered List (0, 8)
+- Why: Simple, repeatable sequence.
+- Guardrails: Title ≤6 chars.
+- Placeholders and content:
+  - title_main (≤6): Steps
+  - body_bullets (≤25 chars each):
+    1) Hit list of possibilities
+    2) Impact/effort score
+    3) Plan per priority
+    4) Evaluate builds
+    5) Iterate + relaunch
+
+22) Sharing cadence
+- Layout: White Background, Black Text, Statement Slide w/ Subtitle (0, 15)
+- Why: Codify the drumbeat.
+- Placeholders and content:
+  - title_main (≤45): Weekly AI signal
+  - subtitle (≤40): Curated news, wins, and risks
+
+23) Risk management
+- Layout: White Background, Black Text, Two Titles two Content Boxes (Non-Bulleted) w/ Header (0, 37)
+- Why: Show risks and mitigations side-by-side with clear labels.
+- Placeholders and content:
+  - header: Risk management
+  - title_main_left: Risks
+  - content_left_non_bullets: Data leakage; model drift; bias; compliance gaps; vendor lock‑in; reputational risk.
+  - title_main_right: Mitigations
+  - content_right_non_bullets: Access controls; eval harness; red‑team tests; usage policies; multi‑vendor strategy; review gates.
+
+24) The ask
+- Layout: Black Background, White Text, Statement Slide w/ Subtitle (0, 12)
+- Why: Close with a clear decision request.
+- Placeholders and content:
+  - title_main (≤45): Ask: greenlight the program
+  - subtitle (≤40): Approve scope, resourcing, and 90‑day plan
+
+Notes and tips
+- Keep all titles within stated character limits; I’ve designed the titles to fit.
+- For numbered list slides (layout 8), ensure each item ≤25 characters.
+- For “Before/After” (layout 17), keep column titles ≤15 characters and balance text volume across columns.
+- For table slides, use short, scannable entries; avoid overcrowding columns with long sentences.
+- For slides with images, use high-contrast, agency-appropriate photography or annotated screenshots of your gems/tools.
+- Optional additions: If you want metrics upfront, insert a “KPIs we’ll track” table before Slide 24 (use layout 29) with columns like Throughput, Cycle Time, Quality, Adoption, and Risk Incidents.
+
+This structure tells a tight story: what we tried, what we learned, what to change, and how we’ll execute—culminating in a crisp ask.

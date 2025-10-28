@@ -1,0 +1,75 @@
+{
+    "deck_meta": {
+      "title": "Automated Deck Generation",
+      "author": "Kyle Mahler",
+      "date": "2025-08-28",
+      "brand": "mx"
+    },
+    "deck_slides": [
+      {
+        "slide_type": "title_slide",
+        "title": "Automated Deck Generation"
+      },
+      {
+        "slide_type": "title_bullets",
+        "title": "Agenda",
+        "bullets": [
+          "Problem: Countless hours are spent on making one time use decks when that time could be better used on other work",
+          "Solution: We need to automate 80 percent of the deck making process",
+          "Architecture: 2 Agents, and bunch of tools made with Python",
+          "Next Steps: AI friendly slide master schema"
+        ]
+      },
+      {
+        "slide_type": "image_left_content_right",
+        "title": "Current Manual Workflow",
+        "bullets": [
+          "Collect brief from email/chat/docs",
+          "Manually pick layouts & copy/paste content",
+          "2\u20134 review loops to fix fonts, spacing, brand"
+        ],
+        "image": {
+          "path": "assets/manual_workflow.png"
+        }
+      },
+      {
+        "slide_type": "big_text",
+        "title": "Brand Fidelity First"
+      },
+      {
+        "slide_type": "image_right_content_left",
+        "title": "System Architecture (MVP)",
+        "bullets": [
+          "LLM #1 \u2192 English plan (slide list)",
+          "LLM #2 \u2192 Strict JSON outline (schema)",
+          "Validator \u2192 lengths, \u22645 bullets, required fields",
+          "Renderer \u2192 layout map \u2192 placeholders (python-pptx)",
+          "Storage & Logs \u2192 S3 + metrics for QA"
+        ],
+        "image": {
+          "path": "assets/architecture.png"
+        }
+      },
+      {
+        "slide_type": "title_bullets",
+        "title": "KPIs & Business Impact",
+        "bullets": [
+          "Build time \u2193 50\u201370% per deck",
+          "On-brand compliance \u2265 90%",
+          "Edits per deck \u2193 from 3 rounds \u2192 1",
+          "Avg. slide errors < 2%",
+          "Cost per deck \u2193 (estimate) by 40\u201360%"
+        ]
+      },
+      {
+        "slide_type": "title_bullets",
+        "title": "Next Steps & Pilot Plan",
+        "bullets": [
+          "Finalize 6 AI-friendly layouts; freeze template",
+          "Pilot with 3 internal teams (10 real briefs)",
+          "Measure time saved + brand score; collect feedback",
+          "Add two layouts post-pilot; harden logging/QA"
+        ]
+      }
+    ]
+  }

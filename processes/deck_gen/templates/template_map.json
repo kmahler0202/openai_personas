@@ -1,0 +1,3084 @@
+{
+  "generated_at": "2025-09-08T17:51:35.789285Z",
+  "ppt_template": "mx_powerpoint_template_v3.pptx",
+  "layouts": [
+    {
+      "master_index": 0,
+      "layout_index": 0,
+      "layout_name": "Team Background, White Text, Title Slide",
+      "layout_key": "title_only",
+      "placeholders": {
+        "body": {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 1,
+      "layout_name": "Picture Background Unfilled, White Text, Title Slide",
+      "layout_key": "title_picture",
+      "placeholders": {
+        "image": {
+          "idx": 11,
+          "name": "background_black",
+          "type_id": 18
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "body": {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 11,
+          "name": "background_black",
+          "type_id": 18
+        },
+        {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 2,
+      "layout_name": "Team Background, White Text, Title Slide w/ Client Logo",
+      "layout_key": "title_only_2",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "plus_sign",
+          "type_id": 2
+        },
+        "image": {
+          "idx": 14,
+          "name": "client_logo",
+          "type_id": 18
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 15,
+          "name": "plus_sign",
+          "type_id": 2
+        },
+        {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        {
+          "idx": 14,
+          "name": "client_logo",
+          "type_id": 18
+        },
+        {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 3,
+      "layout_name": "Picture Background Unfilled, White Text, Title Slide w/ Client Logo",
+      "layout_key": "title_picture_2",
+      "placeholders": {
+        "image": {
+          "idx": 12,
+          "name": "background_black",
+          "type_id": 18
+        },
+        "body": {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "background_black",
+          "type_id": 18
+        },
+        {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        {
+          "idx": 14,
+          "name": "client_logo",
+          "type_id": 18
+        },
+        {
+          "idx": 15,
+          "name": "plus_sign",
+          "type_id": 2
+        },
+        {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 4,
+      "layout_name": "White Background, Black Text, Title Slide",
+      "layout_key": "title_only_3",
+      "placeholders": {
+        "body": {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 5,
+      "layout_name": "Black Background, White Text, Title Slide",
+      "layout_key": "title_only_4",
+      "placeholders": {
+        "body": {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 6,
+      "layout_name": "White Background, Black Text, Title Slide w/ Client Logo",
+      "layout_key": "title_only_5",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "plus_sign",
+          "type_id": 2
+        },
+        "image": {
+          "idx": 14,
+          "name": "client_logo",
+          "type_id": 18
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 15,
+          "name": "plus_sign",
+          "type_id": 2
+        },
+        {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        {
+          "idx": 14,
+          "name": "client_logo",
+          "type_id": 18
+        },
+        {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 7,
+      "layout_name": "Black Background, White Text, Title Slide w/ Client Logo",
+      "layout_key": "title_only_6",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "plus_sign",
+          "type_id": 2
+        },
+        "image": {
+          "idx": 14,
+          "name": "client_logo",
+          "type_id": 18
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 15,
+          "name": "plus_sign",
+          "type_id": 2
+        },
+        {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        {
+          "idx": 14,
+          "name": "client_logo",
+          "type_id": 18
+        },
+        {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 8,
+      "layout_name": "B&W Background, B&W Text, Numbered List",
+      "layout_key": "b_w_background_b_w_text_numbered_list",
+      "placeholders": {
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        },
+        "body": {
+          "idx": 10,
+          "name": "body_bullets",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        },
+        {
+          "idx": 10,
+          "name": "body_bullets",
+          "type_id": 2
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 9,
+      "layout_name": "B&W Background, Table Content, Table Slide",
+      "layout_key": "b_w_background_table_content_table_slide",
+      "placeholders": {
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        },
+        "body": {
+          "idx": 11,
+          "name": "content_table",
+          "type_id": 12
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        },
+        {
+          "idx": 11,
+          "name": "content_table",
+          "type_id": 12
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 10,
+      "layout_name": "Black Background, White Text, Statement Slide",
+      "layout_key": "black_background_white_text_statement_slide",
+      "placeholders": {
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 11,
+      "layout_name": "Black Background, White Text, Statement Slide w/ Mx Colors",
+      "layout_key": "black_background_white_text_statement_slide_w_mx_colors",
+      "placeholders": {
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 12,
+      "layout_name": "Black Background, White Text, Statement Slide w/ Subtitle",
+      "layout_key": "black_background_white_text_statement_slide_w_subtitle",
+      "placeholders": {
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 13,
+      "layout_name": "White Background, Black Text, Statement Slide",
+      "layout_key": "white_background_black_text_statement_slide",
+      "placeholders": {
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 14,
+      "layout_name": "White Background, Black Text, Statement Slide w/ Mx Colors",
+      "layout_key": "white_background_black_text_statement_slide_w_mx_colors",
+      "placeholders": {
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 15,
+      "layout_name": "White Background, Black Text, Statement Slide w/ Subtitle",
+      "layout_key": "white_background_black_text_statement_slide_w_subtitle",
+      "placeholders": {
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 16,
+      "layout_name": "B&W Split Background, B&W Split Text, Before-After w/ 5 Text Boxes Each",
+      "layout_key": "b_w_split_background_b_w_split_text_before_after_w_5_text_boxes_each",
+      "placeholders": {
+        "body": {
+          "idx": 17,
+          "name": "text_box_5_right",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 20,
+          "name": "title_right",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 21,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 17,
+          "name": "text_box_5_right",
+          "type_id": 2
+        },
+        {
+          "idx": 16,
+          "name": "text_box_4_right",
+          "type_id": 2
+        },
+        {
+          "idx": 15,
+          "name": "text_box_3_right",
+          "type_id": 2
+        },
+        {
+          "idx": 14,
+          "name": "text_box_2_right",
+          "type_id": 2
+        },
+        {
+          "idx": 18,
+          "name": "text_box_1_right",
+          "type_id": 2
+        },
+        {
+          "idx": 13,
+          "name": "text_box_5_left",
+          "type_id": 2
+        },
+        {
+          "idx": 12,
+          "name": "text_box_4_left",
+          "type_id": 2
+        },
+        {
+          "idx": 11,
+          "name": "text_box_3_left",
+          "type_id": 2
+        },
+        {
+          "idx": 10,
+          "name": "text_box_2_left",
+          "type_id": 2
+        },
+        {
+          "idx": 19,
+          "name": "text_box_1_left",
+          "type_id": 2
+        },
+        {
+          "idx": 20,
+          "name": "title_right",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_left",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 17,
+      "layout_name": "B&W Split Background, B&W Split Text, Before-After w/ 1 Text Box Each",
+      "layout_key": "b_w_split_background_b_w_split_text_before_after_w_1_text_box_each",
+      "placeholders": {
+        "body": {
+          "idx": 18,
+          "name": "body_right",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 20,
+          "name": "title_right",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 18,
+          "name": "body_right",
+          "type_id": 2
+        },
+        {
+          "idx": 19,
+          "name": "body_left",
+          "type_id": 2
+        },
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 20,
+          "name": "title_right",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_left",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 18,
+      "layout_name": "B&W Split Background, B&W Split Text, Before-After Just Titles",
+      "layout_key": "b_w_split_background_b_w_split_text_before_after_just_titles",
+      "placeholders": {
+        "body": {
+          "idx": 18,
+          "name": "content_right",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 18,
+          "name": "content_right",
+          "type_id": 2
+        },
+        {
+          "idx": 19,
+          "name": "content_left",
+          "type_id": 2
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 19,
+      "layout_name": "White Background, Black Text, Meet the Team",
+      "layout_key": "white_background_black_text_meet_the_team",
+      "placeholders": {
+        "image": {
+          "idx": 10,
+          "name": "team_picture_1",
+          "type_id": 18
+        },
+        "body": {
+          "idx": 13,
+          "name": "team_name_1",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 14,
+          "name": "team_title_1",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 10,
+          "name": "team_picture_1",
+          "type_id": 18
+        },
+        {
+          "idx": 13,
+          "name": "team_name_1",
+          "type_id": 2
+        },
+        {
+          "idx": 14,
+          "name": "team_title_1",
+          "type_id": 2
+        },
+        {
+          "idx": 15,
+          "name": "team_picture_2",
+          "type_id": 18
+        },
+        {
+          "idx": 16,
+          "name": "team_name_2",
+          "type_id": 2
+        },
+        {
+          "idx": 17,
+          "name": "team_title_2",
+          "type_id": 2
+        },
+        {
+          "idx": 18,
+          "name": "team_picture_3",
+          "type_id": 18
+        },
+        {
+          "idx": 19,
+          "name": "team_name_3",
+          "type_id": 2
+        },
+        {
+          "idx": 20,
+          "name": "team_title_3",
+          "type_id": 2
+        },
+        {
+          "idx": 21,
+          "name": "team_picture_4",
+          "type_id": 18
+        },
+        {
+          "idx": 22,
+          "name": "team_name_4",
+          "type_id": 2
+        },
+        {
+          "idx": 23,
+          "name": "team_title_4",
+          "type_id": 2
+        },
+        {
+          "idx": 24,
+          "name": "team_picture_5",
+          "type_id": 18
+        },
+        {
+          "idx": 25,
+          "name": "team_name_5",
+          "type_id": 2
+        },
+        {
+          "idx": 26,
+          "name": "team_title_5",
+          "type_id": 2
+        },
+        {
+          "idx": 27,
+          "name": "team_picture_6",
+          "type_id": 18
+        },
+        {
+          "idx": 28,
+          "name": "team_name_6",
+          "type_id": 2
+        },
+        {
+          "idx": 29,
+          "name": "team_title_6",
+          "type_id": 2
+        },
+        {
+          "idx": 30,
+          "name": "team_picture_7",
+          "type_id": 18
+        },
+        {
+          "idx": 31,
+          "name": "team_name_7",
+          "type_id": 2
+        },
+        {
+          "idx": 32,
+          "name": "team_title_7",
+          "type_id": 2
+        },
+        {
+          "idx": 33,
+          "name": "team_picture_8",
+          "type_id": 18
+        },
+        {
+          "idx": 34,
+          "name": "team_name_8",
+          "type_id": 2
+        },
+        {
+          "idx": 35,
+          "name": "team_title_8",
+          "type_id": 2
+        },
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 20,
+      "layout_name": "White Background, Black Text, Content (Non-Bulleted)",
+      "layout_key": "white_background_black_text_content_non_bulleted",
+      "placeholders": {
+        "body": {
+          "idx": 10,
+          "name": "body_non_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 10,
+          "name": "body_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 21,
+      "layout_name": "White Background, Black Test, Content (Non-Bulleted) w/ Footnote",
+      "layout_key": "white_background_black_test_content_non_bulleted_w_footnote",
+      "placeholders": {
+        "body": {
+          "idx": 13,
+          "name": "footnote",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 13,
+          "name": "footnote",
+          "type_id": 2
+        },
+        {
+          "idx": 10,
+          "name": "body_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 22,
+      "layout_name": "White Background, Black Test, Content In Title Box",
+      "layout_key": "title_and_content",
+      "placeholders": {
+        "title": {
+          "idx": 11,
+          "name": "title_main_content_second_level",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 11,
+          "name": "title_main_content_second_level",
+          "type_id": 2
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 23,
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "layout_key": "white_background_black_test_content_bulleted",
+      "placeholders": {
+        "body": {
+          "idx": 10,
+          "name": "body_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 10,
+          "name": "body_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 24,
+      "layout_name": "White Background, Black Test, Content in Title Box (Bulleted)",
+      "layout_key": "title_and_content_2",
+      "placeholders": {
+        "title": {
+          "idx": 11,
+          "name": "title_main_second_level_bullets",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 11,
+          "name": "title_main_second_level_bullets",
+          "type_id": 2
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 25,
+      "layout_name": "White Background, Black Test, Content in Title Box (Non-Bulleted)",
+      "layout_key": "title_and_content_3",
+      "placeholders": {
+        "title": {
+          "idx": 11,
+          "name": "title_main_content_second_level",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 11,
+          "name": "title_main_content_second_level",
+          "type_id": 2
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 26,
+      "layout_name": "White Background, Black Text, Two Images Side-By-Side",
+      "layout_key": "white_background_black_text_two_images_side_by_side",
+      "placeholders": {
+        "image": {
+          "idx": 11,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 11,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        {
+          "idx": 10,
+          "name": "picture_left",
+          "type_id": 18
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 27,
+      "layout_name": "White Background, Black Text, Title and Chart",
+      "layout_key": "white_background_black_text_title_and_chart",
+      "placeholders": {
+        "body": {
+          "idx": 12,
+          "name": "chart_content",
+          "type_id": 8
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 13,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 12,
+          "name": "chart_content",
+          "type_id": 8
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 28,
+      "layout_name": "White Background, Black Text, Title and Chart w/ Header",
+      "layout_key": "white_background_black_text_title_and_chart_w_header",
+      "placeholders": {
+        "body": {
+          "idx": 14,
+          "name": "header",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 15,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 14,
+          "name": "header",
+          "type_id": 2
+        },
+        {
+          "idx": 12,
+          "name": "content_chart",
+          "type_id": 8
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 29,
+      "layout_name": "White Background, Black Text, Title and Table",
+      "layout_key": "white_background_black_text_title_and_table",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "content_table",
+          "type_id": 12
+        },
+        "subtitle": {
+          "idx": 10,
+          "name": "subtitle",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 15,
+          "name": "content_table",
+          "type_id": 12
+        },
+        {
+          "idx": 10,
+          "name": "subtitle",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 30,
+      "layout_name": "White Background, Black Text, Title and Table w/ Header",
+      "layout_key": "white_background_black_text_title_and_table_w_header",
+      "placeholders": {
+        "body": {
+          "idx": 14,
+          "name": "header",
+          "type_id": 2
+        },
+        "subtitle": {
+          "idx": 10,
+          "name": "subtitle",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 14,
+          "name": "header",
+          "type_id": 2
+        },
+        {
+          "idx": 15,
+          "name": "content_tabe",
+          "type_id": 12
+        },
+        {
+          "idx": 10,
+          "name": "subtitle",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 31,
+      "layout_name": "White Background, Black Text Two Column Comparison (Non-Bulleted)",
+      "layout_key": "comparison",
+      "placeholders": {
+        "body": {
+          "idx": 11,
+          "name": "content_right_non_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 11,
+          "name": "content_right_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 10,
+          "name": "content_left_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 32,
+      "layout_name": "White Background, Black Text Two Column Comparison (Bulleted)",
+      "layout_key": "comparison_2",
+      "placeholders": {
+        "body": {
+          "idx": 11,
+          "name": "content_right_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 11,
+          "name": "content_right_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 10,
+          "name": "content_left_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 33,
+      "layout_name": "White Background, Black Text, Three Column Comparison (Non-Bulleted)",
+      "layout_key": "comparison_3",
+      "placeholders": {
+        "body": {
+          "idx": 12,
+          "name": "content_right_non_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "content_right_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 11,
+          "name": "content_middle_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 13,
+          "name": "content_left_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 14,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 34,
+      "layout_name": "White Background, Black Text, Three Column Comparison (Bulleted)",
+      "layout_key": "comparison_4",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "content_right_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 15,
+          "name": "content_right_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 11,
+          "name": "content_middle_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 14,
+          "name": "content_left_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 35,
+      "layout_name": "White Background, Black Text, Two Column Comparison (Non-Bulleted) w/ Header",
+      "layout_key": "comparison_5",
+      "placeholders": {
+        "body": {
+          "idx": 12,
+          "name": "header",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "header",
+          "type_id": 2
+        },
+        {
+          "idx": 11,
+          "name": "content_right_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 10,
+          "name": "content_left_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 13,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 36,
+      "layout_name": "White Background, Black Text, Three Column Comparison (Non-Bulleted) w/ Header",
+      "layout_key": "comparison_6",
+      "placeholders": {
+        "body": {
+          "idx": 12,
+          "name": "content_right_non_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "content_right_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 11,
+          "name": "content_middle_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 13,
+          "name": "content_left_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 14,
+          "name": "header",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        },
+        {
+          "idx": 15,
+          "name": "slide_number",
+          "type_id": 13
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 37,
+      "layout_name": "White Background, Black Text, Two Titles two Content Boxes (Non-Bulleted) w/ Header",
+      "layout_key": "title_and_content_4",
+      "placeholders": {
+        "body": {
+          "idx": 14,
+          "name": "header",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 16,
+          "name": "title_main_right",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 14,
+          "name": "header",
+          "type_id": 2
+        },
+        {
+          "idx": 15,
+          "name": "content_right_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 13,
+          "name": "content_left_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 16,
+          "name": "title_main_right",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main_left",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 38,
+      "layout_name": "White Background, Black Text, Title and Content w/ Right Picture",
+      "layout_key": "title_and_content_5",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "body": {
+          "idx": 14,
+          "name": "content",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        {
+          "idx": 14,
+          "name": "content",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 39,
+      "layout_name": "White Background, Black Text, Title and Content in same Box w/ Right Picture",
+      "layout_key": "title_and_content_6",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 11,
+          "name": "title_main_content_second_level_non_bullets",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        {
+          "idx": 11,
+          "name": "title_main_content_second_level_non_bullets",
+          "type_id": 2
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 40,
+      "layout_name": "White Background, Black Text, Title and Content w/ Right Picture w/ Header",
+      "layout_key": "title_and_content_7",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "header",
+          "type_id": 2
+        },
+        "image": {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 15,
+          "name": "header",
+          "type_id": 2
+        },
+        {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        {
+          "idx": 14,
+          "name": "content_left",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 41,
+      "layout_name": "White Background, Black Text, Title and Content in same Box w/ Right Picture w/ Header",
+      "layout_key": "title_and_content_8",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "header",
+          "type_id": 2
+        },
+        "image": {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 11,
+          "name": "title_main_content_second_level_non_bullets",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 15,
+          "name": "header",
+          "type_id": 2
+        },
+        {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        {
+          "idx": 11,
+          "name": "title_main_content_second_level_non_bullets",
+          "type_id": 2
+        },
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 42,
+      "layout_name": "White Background, Black Text, Title and Content in same Box (Small Text) w/ Right Picture",
+      "layout_key": "title_and_content_9",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 11,
+          "name": "title_main_content_second_level_non_bullets",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        {
+          "idx": 11,
+          "name": "title_main_content_second_level_non_bullets",
+          "type_id": 2
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 43,
+      "layout_name": "White Background, Black Text, Title and Content (Small Text) w/ Right Picture",
+      "layout_key": "title_and_content_10",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "body": {
+          "idx": 14,
+          "name": "content",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        {
+          "idx": 14,
+          "name": "content",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 44,
+      "layout_name": "White Background, Black Text, Title and Content (Small Text) w/ Left Picture",
+      "layout_key": "title_and_content_11",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture_left",
+          "type_id": 18
+        },
+        "body": {
+          "idx": 14,
+          "name": "content",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 13,
+          "name": "picture_left",
+          "type_id": 18
+        },
+        {
+          "idx": 14,
+          "name": "content",
+          "type_id": 2
+        },
+        {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 45,
+      "layout_name": "White Background, Black Text, Title and Content in Same Box (Small Text) w/ Left Picture",
+      "layout_key": "title_and_content_12",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture_left",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 11,
+          "name": "title_main_content_second_level_",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 13,
+          "name": "picture_left",
+          "type_id": 18
+        },
+        {
+          "idx": 11,
+          "name": "title_main_content_second_level_",
+          "type_id": 2
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 46,
+      "layout_name": "All Picture",
+      "layout_key": "all_picture",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture",
+          "type_id": 18
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 13,
+          "name": "picture",
+          "type_id": 18
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 47,
+      "layout_name": "B&W Background, B&W Text, 4 Quadrants",
+      "layout_key": "b_w_background_b_w_text_4_quadrants",
+      "placeholders": {
+        "body": {
+          "idx": 13,
+          "name": "bottom_right_quadrant",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 13,
+          "name": "bottom_right_quadrant",
+          "type_id": 2
+        },
+        {
+          "idx": 12,
+          "name": "bottom_left_quadrant",
+          "type_id": 2
+        },
+        {
+          "idx": 11,
+          "name": "top_right_quadrant",
+          "type_id": 2
+        },
+        {
+          "idx": 10,
+          "name": "top_left_quadrant",
+          "type_id": 2
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 48,
+      "layout_name": "White Background, Black Text, Just Title and Picture",
+      "layout_key": "title_picture_3",
+      "placeholders": {
+        "image": {
+          "idx": 10,
+          "name": "picture",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 16,
+          "name": "title_main",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 10,
+          "name": "picture",
+          "type_id": 18
+        },
+        {
+          "idx": 16,
+          "name": "title_main",
+          "type_id": 2
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 49,
+      "layout_name": "White Background, Black Text, Just Title and Picture (Gray Title)",
+      "layout_key": "title_picture_4",
+      "placeholders": {
+        "image": {
+          "idx": 10,
+          "name": "picture",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 14,
+          "name": "title_main",
+          "type_id": 2
+        }
+      },
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        },
+        {
+          "idx": 10,
+          "name": "picture",
+          "type_id": 18
+        },
+        {
+          "idx": 14,
+          "name": "title_main",
+          "type_id": 2
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 50,
+      "layout_name": "White Background, No Text, Blank w/ Mx Colors",
+      "layout_key": "blank",
+      "placeholders": {},
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 51,
+      "layout_name": "White Background, No Text, Blank",
+      "layout_key": "blank_2",
+      "placeholders": {},
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        }
+      ]
+    },
+    {
+      "master_index": 0,
+      "layout_index": 52,
+      "layout_name": "Fully Blank",
+      "layout_key": "blank_3",
+      "placeholders": {},
+      "raw_placeholders": [
+        {
+          "idx": 12,
+          "name": "slide_number",
+          "type_id": 13
+        }
+      ]
+    }
+  ],
+  "layouts_by_key": {
+    "title_only": {
+      "master_index": 0,
+      "layout_index": 0,
+      "layout_name": "Team Background, White Text, Title Slide",
+      "placeholders": {
+        "body": {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      }
+    },
+    "title_picture": {
+      "master_index": 0,
+      "layout_index": 1,
+      "layout_name": "Picture Background Unfilled, White Text, Title Slide",
+      "placeholders": {
+        "image": {
+          "idx": 11,
+          "name": "background_black",
+          "type_id": 18
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "body": {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      }
+    },
+    "title_only_2": {
+      "master_index": 0,
+      "layout_index": 2,
+      "layout_name": "Team Background, White Text, Title Slide w/ Client Logo",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "plus_sign",
+          "type_id": 2
+        },
+        "image": {
+          "idx": 14,
+          "name": "client_logo",
+          "type_id": 18
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      }
+    },
+    "title_picture_2": {
+      "master_index": 0,
+      "layout_index": 3,
+      "layout_name": "Picture Background Unfilled, White Text, Title Slide w/ Client Logo",
+      "placeholders": {
+        "image": {
+          "idx": 12,
+          "name": "background_black",
+          "type_id": 18
+        },
+        "body": {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      }
+    },
+    "title_only_3": {
+      "master_index": 0,
+      "layout_index": 4,
+      "layout_name": "White Background, Black Text, Title Slide",
+      "placeholders": {
+        "body": {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      }
+    },
+    "title_only_4": {
+      "master_index": 0,
+      "layout_index": 5,
+      "layout_name": "Black Background, White Text, Title Slide",
+      "placeholders": {
+        "body": {
+          "idx": 10,
+          "name": "todays_date",
+          "type_id": 2
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      }
+    },
+    "title_only_5": {
+      "master_index": 0,
+      "layout_index": 6,
+      "layout_name": "White Background, Black Text, Title Slide w/ Client Logo",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "plus_sign",
+          "type_id": 2
+        },
+        "image": {
+          "idx": 14,
+          "name": "client_logo",
+          "type_id": 18
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      }
+    },
+    "title_only_6": {
+      "master_index": 0,
+      "layout_index": 7,
+      "layout_name": "Black Background, White Text, Title Slide w/ Client Logo",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "plus_sign",
+          "type_id": 2
+        },
+        "image": {
+          "idx": 14,
+          "name": "client_logo",
+          "type_id": 18
+        },
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      }
+    },
+    "b_w_background_b_w_text_numbered_list": {
+      "master_index": 0,
+      "layout_index": 8,
+      "layout_name": "B&W Background, B&W Text, Numbered List",
+      "placeholders": {
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        },
+        "body": {
+          "idx": 10,
+          "name": "body_bullets",
+          "type_id": 2
+        }
+      }
+    },
+    "b_w_background_table_content_table_slide": {
+      "master_index": 0,
+      "layout_index": 9,
+      "layout_name": "B&W Background, Table Content, Table Slide",
+      "placeholders": {
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        },
+        "body": {
+          "idx": 11,
+          "name": "content_table",
+          "type_id": 12
+        }
+      }
+    },
+    "black_background_white_text_statement_slide": {
+      "master_index": 0,
+      "layout_index": 10,
+      "layout_name": "Black Background, White Text, Statement Slide",
+      "placeholders": {
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "black_background_white_text_statement_slide_w_mx_colors": {
+      "master_index": 0,
+      "layout_index": 11,
+      "layout_name": "Black Background, White Text, Statement Slide w/ Mx Colors",
+      "placeholders": {
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "black_background_white_text_statement_slide_w_subtitle": {
+      "master_index": 0,
+      "layout_index": 12,
+      "layout_name": "Black Background, White Text, Statement Slide w/ Subtitle",
+      "placeholders": {
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      }
+    },
+    "white_background_black_text_statement_slide": {
+      "master_index": 0,
+      "layout_index": 13,
+      "layout_name": "White Background, Black Text, Statement Slide",
+      "placeholders": {
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "white_background_black_text_statement_slide_w_mx_colors": {
+      "master_index": 0,
+      "layout_index": 14,
+      "layout_name": "White Background, Black Text, Statement Slide w/ Mx Colors",
+      "placeholders": {
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "white_background_black_text_statement_slide_w_subtitle": {
+      "master_index": 0,
+      "layout_index": 15,
+      "layout_name": "White Background, Black Text, Statement Slide w/ Subtitle",
+      "placeholders": {
+        "subtitle": {
+          "idx": 1,
+          "name": "subtitle",
+          "type_id": 4
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 3
+        }
+      }
+    },
+    "b_w_split_background_b_w_split_text_before_after_w_5_text_boxes_each": {
+      "master_index": 0,
+      "layout_index": 16,
+      "layout_name": "B&W Split Background, B&W Split Text, Before-After w/ 5 Text Boxes Each",
+      "placeholders": {
+        "body": {
+          "idx": 17,
+          "name": "text_box_5_right",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 20,
+          "name": "title_right",
+          "type_id": 2
+        }
+      }
+    },
+    "b_w_split_background_b_w_split_text_before_after_w_1_text_box_each": {
+      "master_index": 0,
+      "layout_index": 17,
+      "layout_name": "B&W Split Background, B&W Split Text, Before-After w/ 1 Text Box Each",
+      "placeholders": {
+        "body": {
+          "idx": 18,
+          "name": "body_right",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 20,
+          "name": "title_right",
+          "type_id": 2
+        }
+      }
+    },
+    "b_w_split_background_b_w_split_text_before_after_just_titles": {
+      "master_index": 0,
+      "layout_index": 18,
+      "layout_name": "B&W Split Background, B&W Split Text, Before-After Just Titles",
+      "placeholders": {
+        "body": {
+          "idx": 18,
+          "name": "content_right",
+          "type_id": 2
+        }
+      }
+    },
+    "white_background_black_text_meet_the_team": {
+      "master_index": 0,
+      "layout_index": 19,
+      "layout_name": "White Background, Black Text, Meet the Team",
+      "placeholders": {
+        "image": {
+          "idx": 10,
+          "name": "team_picture_1",
+          "type_id": 18
+        },
+        "body": {
+          "idx": 13,
+          "name": "team_name_1",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 14,
+          "name": "team_title_1",
+          "type_id": 2
+        }
+      }
+    },
+    "white_background_black_text_content_non_bulleted": {
+      "master_index": 0,
+      "layout_index": 20,
+      "layout_name": "White Background, Black Text, Content (Non-Bulleted)",
+      "placeholders": {
+        "body": {
+          "idx": 10,
+          "name": "body_non_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "white_background_black_test_content_non_bulleted_w_footnote": {
+      "master_index": 0,
+      "layout_index": 21,
+      "layout_name": "White Background, Black Test, Content (Non-Bulleted) w/ Footnote",
+      "placeholders": {
+        "body": {
+          "idx": 13,
+          "name": "footnote",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "title_and_content": {
+      "master_index": 0,
+      "layout_index": 22,
+      "layout_name": "White Background, Black Test, Content In Title Box",
+      "placeholders": {
+        "title": {
+          "idx": 11,
+          "name": "title_main_content_second_level",
+          "type_id": 2
+        }
+      }
+    },
+    "white_background_black_test_content_bulleted": {
+      "master_index": 0,
+      "layout_index": 23,
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "placeholders": {
+        "body": {
+          "idx": 10,
+          "name": "body_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "title_and_content_2": {
+      "master_index": 0,
+      "layout_index": 24,
+      "layout_name": "White Background, Black Test, Content in Title Box (Bulleted)",
+      "placeholders": {
+        "title": {
+          "idx": 11,
+          "name": "title_main_second_level_bullets",
+          "type_id": 2
+        }
+      }
+    },
+    "title_and_content_3": {
+      "master_index": 0,
+      "layout_index": 25,
+      "layout_name": "White Background, Black Test, Content in Title Box (Non-Bulleted)",
+      "placeholders": {
+        "title": {
+          "idx": 11,
+          "name": "title_main_content_second_level",
+          "type_id": 2
+        }
+      }
+    },
+    "white_background_black_text_two_images_side_by_side": {
+      "master_index": 0,
+      "layout_index": 26,
+      "layout_name": "White Background, Black Text, Two Images Side-By-Side",
+      "placeholders": {
+        "image": {
+          "idx": 11,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "white_background_black_text_title_and_chart": {
+      "master_index": 0,
+      "layout_index": 27,
+      "layout_name": "White Background, Black Text, Title and Chart",
+      "placeholders": {
+        "body": {
+          "idx": 12,
+          "name": "chart_content",
+          "type_id": 8
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "white_background_black_text_title_and_chart_w_header": {
+      "master_index": 0,
+      "layout_index": 28,
+      "layout_name": "White Background, Black Text, Title and Chart w/ Header",
+      "placeholders": {
+        "body": {
+          "idx": 14,
+          "name": "header",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "white_background_black_text_title_and_table": {
+      "master_index": 0,
+      "layout_index": 29,
+      "layout_name": "White Background, Black Text, Title and Table",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "content_table",
+          "type_id": 12
+        },
+        "subtitle": {
+          "idx": 10,
+          "name": "subtitle",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "white_background_black_text_title_and_table_w_header": {
+      "master_index": 0,
+      "layout_index": 30,
+      "layout_name": "White Background, Black Text, Title and Table w/ Header",
+      "placeholders": {
+        "body": {
+          "idx": 14,
+          "name": "header",
+          "type_id": 2
+        },
+        "subtitle": {
+          "idx": 10,
+          "name": "subtitle",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "comparison": {
+      "master_index": 0,
+      "layout_index": 31,
+      "layout_name": "White Background, Black Text Two Column Comparison (Non-Bulleted)",
+      "placeholders": {
+        "body": {
+          "idx": 11,
+          "name": "content_right_non_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "comparison_2": {
+      "master_index": 0,
+      "layout_index": 32,
+      "layout_name": "White Background, Black Text Two Column Comparison (Bulleted)",
+      "placeholders": {
+        "body": {
+          "idx": 11,
+          "name": "content_right_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "comparison_3": {
+      "master_index": 0,
+      "layout_index": 33,
+      "layout_name": "White Background, Black Text, Three Column Comparison (Non-Bulleted)",
+      "placeholders": {
+        "body": {
+          "idx": 12,
+          "name": "content_right_non_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "comparison_4": {
+      "master_index": 0,
+      "layout_index": 34,
+      "layout_name": "White Background, Black Text, Three Column Comparison (Bulleted)",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "content_right_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "comparison_5": {
+      "master_index": 0,
+      "layout_index": 35,
+      "layout_name": "White Background, Black Text, Two Column Comparison (Non-Bulleted) w/ Header",
+      "placeholders": {
+        "body": {
+          "idx": 12,
+          "name": "header",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "comparison_6": {
+      "master_index": 0,
+      "layout_index": 36,
+      "layout_name": "White Background, Black Text, Three Column Comparison (Non-Bulleted) w/ Header",
+      "placeholders": {
+        "body": {
+          "idx": 12,
+          "name": "content_right_non_bullets",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "title_and_content_4": {
+      "master_index": 0,
+      "layout_index": 37,
+      "layout_name": "White Background, Black Text, Two Titles two Content Boxes (Non-Bulleted) w/ Header",
+      "placeholders": {
+        "body": {
+          "idx": 14,
+          "name": "header",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 16,
+          "name": "title_main_right",
+          "type_id": 2
+        }
+      }
+    },
+    "title_and_content_5": {
+      "master_index": 0,
+      "layout_index": 38,
+      "layout_name": "White Background, Black Text, Title and Content w/ Right Picture",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "body": {
+          "idx": 14,
+          "name": "content",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "title_and_content_6": {
+      "master_index": 0,
+      "layout_index": 39,
+      "layout_name": "White Background, Black Text, Title and Content in same Box w/ Right Picture",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 11,
+          "name": "title_main_content_second_level_non_bullets",
+          "type_id": 2
+        }
+      }
+    },
+    "title_and_content_7": {
+      "master_index": 0,
+      "layout_index": 40,
+      "layout_name": "White Background, Black Text, Title and Content w/ Right Picture w/ Header",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "header",
+          "type_id": 2
+        },
+        "image": {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "title_and_content_8": {
+      "master_index": 0,
+      "layout_index": 41,
+      "layout_name": "White Background, Black Text, Title and Content in same Box w/ Right Picture w/ Header",
+      "placeholders": {
+        "body": {
+          "idx": 15,
+          "name": "header",
+          "type_id": 2
+        },
+        "image": {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 11,
+          "name": "title_main_content_second_level_non_bullets",
+          "type_id": 2
+        }
+      }
+    },
+    "title_and_content_9": {
+      "master_index": 0,
+      "layout_index": 42,
+      "layout_name": "White Background, Black Text, Title and Content in same Box (Small Text) w/ Right Picture",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 11,
+          "name": "title_main_content_second_level_non_bullets",
+          "type_id": 2
+        }
+      }
+    },
+    "title_and_content_10": {
+      "master_index": 0,
+      "layout_index": 43,
+      "layout_name": "White Background, Black Text, Title and Content (Small Text) w/ Right Picture",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture_right",
+          "type_id": 18
+        },
+        "body": {
+          "idx": 14,
+          "name": "content",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "title_and_content_11": {
+      "master_index": 0,
+      "layout_index": 44,
+      "layout_name": "White Background, Black Text, Title and Content (Small Text) w/ Left Picture",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture_left",
+          "type_id": 18
+        },
+        "body": {
+          "idx": 14,
+          "name": "content",
+          "type_id": 2
+        },
+        "title": {
+          "idx": 0,
+          "name": "title_main",
+          "type_id": 1
+        }
+      }
+    },
+    "title_and_content_12": {
+      "master_index": 0,
+      "layout_index": 45,
+      "layout_name": "White Background, Black Text, Title and Content in Same Box (Small Text) w/ Left Picture",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture_left",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 11,
+          "name": "title_main_content_second_level_",
+          "type_id": 2
+        }
+      }
+    },
+    "all_picture": {
+      "master_index": 0,
+      "layout_index": 46,
+      "layout_name": "All Picture",
+      "placeholders": {
+        "image": {
+          "idx": 13,
+          "name": "picture",
+          "type_id": 18
+        }
+      }
+    },
+    "b_w_background_b_w_text_4_quadrants": {
+      "master_index": 0,
+      "layout_index": 47,
+      "layout_name": "B&W Background, B&W Text, 4 Quadrants",
+      "placeholders": {
+        "body": {
+          "idx": 13,
+          "name": "bottom_right_quadrant",
+          "type_id": 2
+        }
+      }
+    },
+    "title_picture_3": {
+      "master_index": 0,
+      "layout_index": 48,
+      "layout_name": "White Background, Black Text, Just Title and Picture",
+      "placeholders": {
+        "image": {
+          "idx": 10,
+          "name": "picture",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 16,
+          "name": "title_main",
+          "type_id": 2
+        }
+      }
+    },
+    "title_picture_4": {
+      "master_index": 0,
+      "layout_index": 49,
+      "layout_name": "White Background, Black Text, Just Title and Picture (Gray Title)",
+      "placeholders": {
+        "image": {
+          "idx": 10,
+          "name": "picture",
+          "type_id": 18
+        },
+        "title": {
+          "idx": 14,
+          "name": "title_main",
+          "type_id": 2
+        }
+      }
+    },
+    "blank": {
+      "master_index": 0,
+      "layout_index": 50,
+      "layout_name": "White Background, No Text, Blank w/ Mx Colors",
+      "placeholders": {}
+    },
+    "blank_2": {
+      "master_index": 0,
+      "layout_index": 51,
+      "layout_name": "White Background, No Text, Blank",
+      "placeholders": {}
+    },
+    "blank_3": {
+      "master_index": 0,
+      "layout_index": 52,
+      "layout_name": "Fully Blank",
+      "placeholders": {}
+    }
+  },
+  "aliases": {}
+}

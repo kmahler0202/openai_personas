@@ -1,0 +1,76 @@
+Here’s a concise, human‑readable plan for a 5‑slide deck titled “Dogs being the future employees of MX.” Each slide includes the recommended layout and exactly what to place in each placeholder, aligned to the template’s guardrails. No “DO NOT USE” layouts are included.
+
+Slide 1 — Cover: set the tone and credibility
+- Layout: Picture Background Unfilled, White Text, Title Slide (master_index 0, layout_index 1)
+- Why this: A hero image cover is perfect to introduce a playful, high‑impact concept with immediate visual context.
+- Placeholders to fill:
+  - image (background_black): Full‑bleed, high‑resolution photo of a diverse group of dogs in a modern office setting (natural light, friendly, no heavy text in the image).
+  - title_main: “Dogs Are MX’s Future Teammates” (≤45 chars)
+  - subtitle: “A playful plan to boost performance” (≤40 chars)
+  - todays_date: “October 28, 2025” (Date field required)
+- Notes:
+  - Ensure the background image has safe margins and doesn’t clash with white text.
+  - Keep title/subtitle short for legibility over imagery.
+
+Slide 2 — Thesis: the strategic rationale in one beat
+- Layout: Black Background, White Text, Statement Slide w/ Subtitle (master_index 0, layout_index 12)
+- Why this: A bold thesis plus a short context line frames the argument clearly.
+- Placeholders to fill:
+  - title_main: “Paws: a strategic advantage” (≤45 chars)
+  - subtitle: “Engagement, wellness, and security” (≤40 chars)
+- Notes:
+  - This slide is a section‑level headline; speak to the business outcomes, not just “cute factor.”
+
+Slide 3 — Proof: five concise reasons (numbered)
+- Layout: B&W Background, B&W Text, Numbered List (master_index 0, layout_index 8)
+- Why this: Purpose‑built for agenda/steps; keeps copy tight and scannable.
+- Guardrails to observe:
+  - Title ≤6 characters
+  - Up to 6 list items
+  - ≤25 characters per item
+- Placeholders to fill:
+  - title_main: “Proof”
+  - body_bullets (numbered list; 5 items):
+    1) “More morale, less churn”
+    2) “Stress down, focus up”
+    3) “Built-in micro-breaks”
+    4) “Friendlier guest welcomes”
+    5) “Great PR + social content”
+- Notes:
+  - Keep each line under 25 characters; the above options comply.
+
+Slide 4 — Roles and responsibilities: make it operational
+- Layout: White Background, Black Text, Title and Table (master_index 0, layout_index 29)
+- Why this: A clean grid to translate the idea into roles, skills, and use cases.
+- Placeholders to fill:
+  - title_main: “K9 Roles at MX”
+  - subtitle: “Sample responsibilities”
+  - content_table: 3 columns x 4 rows (example content)
+    - Columns: Role | Core Skill | MX Use Case
+    - Row 1: Chief Barketing Officer | Brand lift | Slack cameos, photo ops
+    - Row 2: Wellness Officer | Stress relief | Therapy circuits, break cues
+    - Row 3: Paw‑tection Associate | Calm security | Greet visitors, escort late exits
+    - Row 4: Culture Ambassador | Community building | Town hall greeter, new‑hire welcome
+- Notes:
+  - Keep cell text concise; avoid wrapping to maintain readability.
+  - If space allows, add a fifth role (e.g., “Engagement Analyst”) focusing on “Pulse survey mascot.”
+
+Slide 5 — Pilot and next steps: how we start
+- Layout: White Background, Black Text, Content (Non‑Bulleted) (master_index 0, layout_index 20)
+- Why this: A short, narrative plan reads cleanly and avoids bullets while outlining the path to action.
+- Guardrails: Title ≤30 characters
+- Placeholders to fill:
+  - title_main: “Pilot & Next Steps”
+  - body_non_bullets (short paragraph):
+    “Launch a 60‑day pilot with two volunteer employees’ trained, vaccinated dogs. Schedule Tue–Thu, 10a–3p in designated zones with allergy accommodations and hygiene standards. Establish clear handler responsibilities and safety rules. Measure impact via pulse surveys, focus‑time proxy, visitor NPS, and support ticket sentiment. At Day 60, review outcomes and decide on scale‑up.”
+- Notes:
+  - Keep to 4–5 compact sentences for readability.
+  - If you prefer an image here, switch to ‘Title and Content w/ Right Picture’ (layout_index 38) and add a candid office dog photo.
+
+Optional accessibility and quality notes (applies across slides)
+- Alt text: Provide concise alt text for each image (e.g., “Three dogs lying near desks in a modern office”).
+- Contrast: Black/white themes already meet contrast; verify readability on the photo cover.
+- Tone: Keep copy professional, playful, and business‑outcome oriented.
+- Legal/HR: Before presenting externally, ensure HR has reviewed policy, allergy accommodations, and safety language.
+
+That’s your 5‑slide arc: high‑impact cover, clear thesis, concise proof points, operational roles, and a pragmatic pilot plan.

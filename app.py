@@ -10,6 +10,8 @@ from dotenv import load_dotenv
 
 from main import run_personas
 
+from processes.deck_gen.generate_deck import run_deck_generation
+
 # Your modules (from earlier messages)
 # from crew_runner import run_buyer_ecosystem_crew
 # from google_docs import create_doc_with_content
@@ -43,7 +45,9 @@ def _normalize_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
         "target_market_segments": payload.get("Target Market Segments", ""),
         "target_geographies": payload.get("Target Geographies", ""),
         "email": payload.get("MX Email", ""),
-        "client": payload.get("Client", "")
+        "client": payload.get("Client", ""),
+        "tool": payload.get("Select Desired Tool", ""),
+        "deck_description": payload.get("Description", "")
     }
 
     # Optional idempotency key if caller sends it
@@ -70,19 +74,20 @@ def version():
 # this is good and tested all the way up until run_buyer_ecosystem_crew
 @app.post("/forms-webhook")
 def forms_webhook():
+    print("Got To /forms-webhook")
     try:
         if not _verify_secret(request):
             return jsonify({"error": "unauthorized"}), 401
         payload = request.get_json(force=True)
         form_data = _normalize_payload(payload)
 
-    
-        print("Got Through /forms-webhook")
+        desired_tool = form_data.get("tool", "")
 
-        print(form_data)
+        if(desired_tool == "Buyer Ecosystem, Personas, and Content Reccomendations"):
+            run_personas(form_data)
+        elif(desired_tool == "Deck Generation"):
+            run_deck_generation(form_data["deck_description"])
 
-        run_personas(form_data)
-  
         
         return jsonify({
             "status": "success"         
@@ -90,42 +95,6 @@ def forms_webhook():
     except Exception as e:
         app.logger.error("Webhook error: %s\n%s", e, traceback.format_exc())
         return jsonify({"error": "internal_error"}), 500
-
-# kicks off a specific crew
-@app.post("/kickoff_crew")
-def kickoff_crew_route():
-    """Direct kickoff path if you (or another system) want to start jobs without Forms."""
-    try:
-        if not _verify_secret(request):
-            return jsonify({"error": "unauthorized"}), 401
-        body = request.get_json(force=True)
-        crew_key = body.get("crew_key") or DEFAULT_CREW
-        form_data = body.get("form_data") or {}
-        if not form_data.get("company_name") or not form_data.get("industry"):
-            return jsonify({"error":"missing_required_fields","fields":["company_name","industry"]}), 400
-        job_id = enqueue_job(crew_key=crew_key, form_data=form_data)
-        return jsonify({"status":"queued","job_id":job_id,"crew_key":crew_key}), 200
-    except Exception as e:
-        app.logger.error("Kickoff error: %s\n%s", e, traceback.format_exc())
-        return jsonify({"error":"internal_error"}), 500
-
-
-# polls the status of a specific job
-@app.get("/job/<job_id>")
-def job_status(job_id: str):
-    job = get_job(job_id)
-    if not job:
-        return jsonify({"error":"not_found"}), 404
-    # Don’t dump gigantic results unless succeeded
-    resp = {
-        k: job.get(k) for k in (
-            "id","crew_key","status","created_at","started_at","finished_at",
-            "error","doc_url"
-        )
-    }
-    if job.get("status") == "succeeded":
-        resp["result_preview"] = (job.get("result") or "")[:4000]  # trim preview
-    return jsonify(resp), 200
 
 
 if __name__ == "__main__":

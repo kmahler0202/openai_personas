@@ -1,0 +1,238 @@
+{
+  "deck_meta": {
+    "title": "Automatic Deck Generation",
+    "author": "Kyle Mahler",
+    "date": "2025-09-03",
+    "brand": "AI-powered presentation workflows"
+  },
+  "deck_slides": [
+    {
+      "layout_name": "Picture Background, White Text, Title Slide",
+      "master_index": 0,
+      "layout_index": 1,
+      "title": "Automatic Deck Generation",
+      "bullets": [],
+      "notes": "AI-powered presentation workflows",
+      "image": {
+        "path": "assets/cover_image.png"
+      },
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 1,
+        "layout_name": "Picture Background, White Text, Title Slide"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Text, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 13,
+      "title": "Agenda",
+      "bullets": [
+        "Problem with current decks",
+        "Why automation matters",
+        "System architecture",
+        "Benefits for teams",
+        "Next steps"
+      ],
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 13,
+        "layout_name": "White Background, Black Text, Content (Bulleted)"
+      }
+    },
+    {
+      "layout_name": "Black Background, White Text, Statement Slide",
+      "master_index": 0,
+      "layout_index": 6,
+      "title": "Teams waste countless hours creating one-off decks that aren\u2019t reused.",
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 6,
+        "layout_name": "Black Background, White Text, Statement Slide"
+      }
+    },
+    {
+      "layout_name": "B&W Split Background, B&W Split Text, Before-After w/ 5 Text Boxes Each",
+      "master_index": 0,
+      "layout_index": 10,
+      "title": "Workflow Comparison",
+      "bullets": [
+        "Manual: Collect brief, Copy/paste, 3\u20134 review loops",
+        "Automated: Brief \u2192 Outline \u2192 Render \u2192 Final deck"
+      ],
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 10,
+        "layout_name": "B&W Split Background, B&W Split Text, Before-After w/ 5 Text Boxes Each"
+      }
+    },
+    {
+      "layout_name": "Black Background, White Text, Statement Slide",
+      "master_index": 0,
+      "layout_index": 6,
+      "title": "Brand Fidelity First",
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 6,
+        "layout_name": "Black Background, White Text, Statement Slide"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Text, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 13,
+      "title": "Why Automation Matters",
+      "bullets": [
+        "Consistency across decks",
+        "Faster delivery",
+        "Less manual reformatting",
+        "On-brand by default"
+      ],
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 13,
+        "layout_name": "White Background, Black Text, Content (Bulleted)"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Text, Content w/ Picture on Right Half",
+      "master_index": 0,
+      "layout_index": 25,
+      "title": "Two AI Agents + Tools",
+      "bullets": [
+        "AI Outline",
+        "AI Layout Choice",
+        "Validator",
+        "Renderer"
+      ],
+      "image": {
+        "path": "assets/architecture.png"
+      },
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 25,
+        "layout_name": "White Background, Black Text, Content w/ Picture on Right Half"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Text, Three Column Comparison (Bulleted)",
+      "master_index": 0,
+      "layout_index": 17,
+      "title": "Key Capabilities",
+      "bullets": [
+        "Agent #1 \u2192 Outline",
+        "Agent #2 \u2192 Layout & content",
+        "Renderer \u2192 Branded deck"
+      ],
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 17,
+        "layout_name": "White Background, Black Text, Three Column Comparison (Bulleted)"
+      }
+    },
+    {
+      "layout_name": "B&W Split Background, B&W Split Text, Before-After w/ 5 Text Boxes Each",
+      "master_index": 0,
+      "layout_index": 10,
+      "title": "Editing Loops",
+      "bullets": [
+        "Before: 3\u20134 rounds of review, font fixes, layout swaps",
+        "After: 1 round of review, style guide auto-applied"
+      ],
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 10,
+        "layout_name": "B&W Split Background, B&W Split Text, Before-After w/ 5 Text Boxes Each"
+      }
+    },
+    {
+      "layout_name": "Black Background, White Text, Statement Slide",
+      "master_index": 0,
+      "layout_index": 6,
+      "title": "Decks should serve ideas, not steal time.",
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 6,
+        "layout_name": "Black Background, White Text, Statement Slide"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Text, Content w/ Picture on Right Half",
+      "master_index": 0,
+      "layout_index": 25,
+      "title": "Business Impact",
+      "bullets": [
+        "Build time \u2193 50\u201370%",
+        "Edits \u2193 from 3 rounds \u2192 1",
+        "Cost per deck \u2193 40\u201360%"
+      ],
+      "image": {
+        "path": "assets/impact_chart.png"
+      },
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 25,
+        "layout_name": "White Background, Black Text, Content w/ Picture on Right Half"
+      }
+    },
+    {
+      "layout_name": "4 Quadrants B&W Background, B&W Text, What we Heard 4 Quadrants",
+      "master_index": 0,
+      "layout_index": 22,
+      "title": "What We Heard from Teams",
+      "bullets": [
+        "Too slow",
+        "Off brand",
+        "Inconsistent",
+        "Hard to update"
+      ],
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 22,
+        "layout_name": "4 Quadrants B&W Background, B&W Text, What we Heard 4 Quadrants"
+      }
+    },
+    {
+      "layout_name": "Team Picture Slide White Background",
+      "master_index": 0,
+      "layout_index": 21,
+      "title": "Pilot Team",
+      "bullets": [
+        "5 team members with photos, names, and roles"
+      ],
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 21,
+        "layout_name": "Team Picture Slide White Background"
+      }
+    },
+    {
+      "layout_name": "Black Background, White Text, Statement Slide",
+      "master_index": 0,
+      "layout_index": 6,
+      "title": "Reduce build time by half, on brand every time.",
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 6,
+        "layout_name": "Black Background, White Text, Statement Slide"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Text, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 13,
+      "title": "Next Steps",
+      "bullets": [
+        "Freeze template layouts",
+        "Pilot with internal teams",
+        "Measure time saved + compliance",
+        "Gather feedback & iterate"
+      ],
+      "layout_override": {
+        "master_index": 0,
+        "layout_index": 13,
+        "layout_name": "White Background, Black Text, Content (Bulleted)"
+      }
+    }
+  ]
+}

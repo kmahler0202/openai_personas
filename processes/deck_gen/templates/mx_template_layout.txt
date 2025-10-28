@@ -1,0 +1,74 @@
+Template has 16 layouts:
+
+--- Layout 0: Blue Title Slide ---
+   idx=0, name='Title 1', type=CENTER_TITLE (3)
+   idx=1, name='Subtitle 2', type=SUBTITLE (4)
+--- Layout 1: 2_Blue Title Slide ---
+   idx=0, name='Title 1', type=CENTER_TITLE (3)
+   idx=1, name='Subtitle 2', type=SUBTITLE (4)
+--- Layout 2: 1_Blue Title Slide ---
+   idx=0, name='Title 1', type=CENTER_TITLE (3)
+   idx=1, name='Subtitle 2', type=SUBTITLE (4)
+--- Layout 3: White Title Slide ---
+   idx=0, name='Title 1', type=CENTER_TITLE (3)
+   idx=1, name='Subtitle 2', type=SUBTITLE (4)
+--- Layout 4: 1_White Title Slide ---
+   idx=14, name='Picture Placeholder 13', type=PICTURE (18)
+   idx=0, name='Title 1', type=CENTER_TITLE (3)
+   idx=1, name='Subtitle 2', type=SUBTITLE (4)
+--- Layout 5: Lower Photo Divider Slide ---
+   idx=0, name='Title 1', type=TITLE (1)
+--- Layout 6: 1_Lower Photo Divider Slide ---
+   idx=0, name='Title 1', type=TITLE (1)
+--- Layout 7: From > To  ---
+   idx=10, name='Text Placeholder 19', type=BODY (2)
+   idx=11, name='Text Placeholder 19', type=BODY (2)
+   idx=12, name='Text Placeholder 19', type=BODY (2)
+   idx=13, name='Text Placeholder 19', type=BODY (2)
+   idx=19, name='Text Placeholder 19', type=BODY (2)
+   idx=14, name='Text Placeholder 19', type=BODY (2)
+   idx=15, name='Text Placeholder 19', type=BODY (2)
+   idx=16, name='Text Placeholder 19', type=BODY (2)
+   idx=17, name='Text Placeholder 19', type=BODY (2)
+   idx=18, name='Text Placeholder 19', type=BODY (2)
+--- Layout 8: Title and Content ---
+   idx=12, name='Slide Number Placeholder 5', type=SLIDE_NUMBER (13)
+--- Layout 9: Team Slide ---
+   idx=12, name='Slide Number Placeholder 8', type=SLIDE_NUMBER (13)
+   idx=10, name='Picture Placeholder 7', type=PICTURE (18)
+   idx=13, name='Text Placeholder 10', type=BODY (2)
+   idx=14, name='Text Placeholder 10', type=BODY (2)
+   idx=15, name='Picture Placeholder 7', type=PICTURE (18)
+   idx=16, name='Text Placeholder 10', type=BODY (2)
+   idx=17, name='Text Placeholder 10', type=BODY (2)
+   idx=18, name='Picture Placeholder 7', type=PICTURE (18)
+   idx=19, name='Text Placeholder 10', type=BODY (2)
+   idx=20, name='Text Placeholder 10', type=BODY (2)
+   idx=21, name='Picture Placeholder 7', type=PICTURE (18)
+   idx=22, name='Text Placeholder 10', type=BODY (2)
+   idx=23, name='Text Placeholder 10', type=BODY (2)
+   idx=24, name='Picture Placeholder 7', type=PICTURE (18)
+   idx=25, name='Text Placeholder 10', type=BODY (2)
+   idx=26, name='Text Placeholder 10', type=BODY (2)
+   idx=27, name='Picture Placeholder 7', type=PICTURE (18)
+   idx=28, name='Text Placeholder 10', type=BODY (2)
+   idx=29, name='Text Placeholder 10', type=BODY (2)
+   idx=30, name='Picture Placeholder 7', type=PICTURE (18)
+   idx=31, name='Text Placeholder 10', type=BODY (2)
+   idx=32, name='Text Placeholder 10', type=BODY (2)
+   idx=33, name='Picture Placeholder 7', type=PICTURE (18)
+   idx=34, name='Text Placeholder 10', type=BODY (2)
+   idx=35, name='Text Placeholder 10', type=BODY (2)
+--- Layout 10: Blank Agenda ---
+--- Layout 11: 1_Blank Agenda ---
+--- Layout 12: What We Heard 4 ---
+--- Layout 13: Left Side Image ---
+   idx=12, name='Slide Number Placeholder 6', type=SLIDE_NUMBER (13)
+   idx=13, name='Picture Placeholder 8', type=PICTURE (18)
+   idx=0, name='Title 1', type=TITLE (1)
+   idx=14, name='Content Placeholder 12', type=OBJECT (7)
+--- Layout 14: Blank ---
+   idx=12, name='Slide Number Placeholder 6', type=SLIDE_NUMBER (13)
+--- Layout 15: 1_Title Only ---
+   idx=0, name='Title 1', type=TITLE (1)
+   idx=12, name='Slide Number Placeholder 4', type=SLIDE_NUMBER (13)
