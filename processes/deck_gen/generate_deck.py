@@ -355,7 +355,7 @@ def run_deck_generation(deck_description: str) -> Dict[str, Any]:
         author = "Kyle Mahler"
         brand = "MX"
         date = datetime.now().strftime("%Y-%m-%d")
-        model = "gpt-5-mini"
+        model = "gpt-5"
         skip_plan = False
         
         # Set default paths
