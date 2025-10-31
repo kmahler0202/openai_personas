@@ -43,7 +43,9 @@ def _normalize_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
         "email": payload.get("MX Email", ""),
         "client": payload.get("Client", ""),
         "tool": payload.get("Select Desired Tool", ""),
-        "deck_description": payload.get("Description", "")
+        "deck_description": payload.get("Description", ""),
+        "rfp_id": payload.get("Submit RFP Here", ""),
+        # TODO: Add RFP LaunchPad fields, figure out what uploading the file looks like in the payload. Possibly just a link to it?--
     }
 
     # Optional idempotency key if caller sends it
@@ -117,6 +119,8 @@ def forms_webhook():
             else:
                 print(f"❌ Deck generation failed: {result.get('error')}")
                 return jsonify({"error": result.get("error")}), 500
+        elif(desired_tool == "RFP LaunchPad"):
+            print(f"RFP File ID: {form_data["rfp_id"][0]}")
         
         return jsonify({
             "status": "success"         
