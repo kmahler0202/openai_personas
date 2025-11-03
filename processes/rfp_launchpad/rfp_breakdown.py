@@ -91,10 +91,8 @@ Do not repeat the keys in the JSON output."""
         text={
             "format":{
                 "type": "json_schema",
-                "json_schema": {
-                    "name": "rfp_breakdown",
-                    "strict": True,
-                    "schema": {
+                "name": "rfp_breakdown",
+                "schema": {
                         "type": "object",
                         "properties": {
                             "background_and_context": {
@@ -131,16 +129,22 @@ Do not repeat the keys in the JSON output."""
                             "questions_to_answer"
                         ],
                         "additionalProperties": False
-                    }
+                    },
+                    "strict": True
                 }
             }
-        }
     )
 
     result = response.output_text
 
+    parsed_result = json.loads(result)
+
+    print(result)
+
+    print(parsed_result)
+
     
-    return result
+    return parsed_result
 
 
 def format_breakdown_output(breakdown: Dict[str, str]) -> str:
