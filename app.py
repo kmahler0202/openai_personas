@@ -10,7 +10,11 @@ from dotenv import load_dotenv
 
 from processes.persona_gen import run_persona_generation
 from processes.deck_gen.generate_deck import run_deck_generation
+from processes.rfp_launchpad.rfp_breakdown import breakdown_rfp
+from processes.rfp_launchpad.rfp_answer import answer_rfp_questions
+
 from services import get_google_services, send_deck_with_attachment
+from services.gdrive_service import extract_pdf_text_from_drive
 
 # ---------- Bootstrap ----------
 load_dotenv()
@@ -120,7 +124,30 @@ def forms_webhook():
                 print(f"❌ Deck generation failed: {result.get('error')}")
                 return jsonify({"error": result.get("error")}), 500
         elif(desired_tool == "RFP LaunchPad"):
-            print(f"RFP File ID: {form_data["rfp_id"][0]}")
+
+            # Get Google services for Google Drive
+            _, drive_service, _ = get_google_services()
+            
+            file_id = form_data["rfp_id"][0]
+            print(f"📋 Attempting to extract PDF from Drive with file_id: {file_id}")
+            
+            try:
+                pdf_text = extract_pdf_text_from_drive(drive_service, file_id)
+                print(f"✅ PDF text extracted from Drive ({len(pdf_text)} characters)")
+
+                # Breakdown the RFP
+                breakdown = breakdown_rfp(pdf_text)
+                print(f"✅ RFP breakdown complete")
+                
+                # Answer the RFP questions
+                answers = answer_rfp_questions(breakdown["questions_to_answer"])
+                print(f"✅ RFP questions answered: {answers}")
+            
+            except Exception as e:
+                print(f"❌ Error extracting PDF from Drive: {e}")
+                print(f"Full traceback: {traceback.format_exc()}")
+                return jsonify({"error": f"Failed to extract PDF: {str(e)}"}), 500
+            
         
         return jsonify({
             "status": "success"         

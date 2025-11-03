@@ -25,8 +25,8 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Configuration
 EMBEDDING_MODEL = "text-embedding-3-small"  # 1536 dimensions
-CHUNK_SIZE = 1000  # characters
-CHUNK_OVERLAP = 200  # characters
+CHUNK_SIZE = 1500  # characters
+CHUNK_OVERLAP = 300  # characters
 
 
 def extract_text_from_pdf(pdf_path: str) -> str:

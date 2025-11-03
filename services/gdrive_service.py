@@ -7,10 +7,12 @@ Provides Google Drive and Google Docs operations including:
 - Document permissions management
 """
 
+import io
 import tempfile
 from pathlib import Path
 from typing import Optional, Dict, Any
-from googleapiclient.http import MediaFileUpload
+import PyPDF2
+from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 
 
 def upload_markdown_to_doc(
@@ -174,3 +176,53 @@ def upload_file_to_drive(
     
     print(f"✅ File uploaded to Drive: {uploaded.get('name')}")
     return uploaded
+
+
+def extract_pdf_text_from_drive(
+    drive_service,
+    file_id: str
+) -> str:
+    """
+    Download a PDF from Google Drive and extract its text content.
+    
+    Args:
+        drive_service: Authenticated Google Drive API service client
+        file_id: Google Drive file ID of the PDF
+    
+    Returns:
+        str: Extracted text content from the PDF
+    
+    Raises:
+        Exception: If download or text extraction fails
+    """
+    try:
+        # Download the PDF file from Drive
+        request = drive_service.files().get_media(fileId=file_id)
+        fh = io.BytesIO()
+        downloader = MediaIoBaseDownload(fh, request)
+        
+        done = False
+        while not done:
+            status, done = downloader.next_chunk()
+            if status:
+                print(f"Download progress: {int(status.progress() * 100)}%")
+        
+        print("✅ PDF downloaded from Drive")
+        
+        # Extract text from the PDF
+        fh.seek(0)  # Reset file pointer to beginning
+        pdf_reader = PyPDF2.PdfReader(fh)
+        
+        text = ""
+        total_pages = len(pdf_reader.pages)
+        
+        for page_num, page in enumerate(pdf_reader.pages):
+            page_text = page.extract_text()
+            text += f"\n--- Page {page_num + 1} of {total_pages} ---\n{page_text}"
+        
+        print(f"✅ Extracted text from {total_pages} pages")
+        return text
+        
+    except Exception as e:
+        print(f"❌ Error extracting PDF text from Drive: {e}")
+        raise

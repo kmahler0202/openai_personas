@@ -13,7 +13,7 @@ from googleapiclient.discovery import build
 
 # Scopes required for all Google API operations
 SCOPES = [
-    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive",  # Full Drive access (read/write)
     "https://www.googleapis.com/auth/documents",
     "https://www.googleapis.com/auth/gmail.send",
 ]
