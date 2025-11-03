@@ -78,7 +78,7 @@ Do not repeat the keys in the JSON output."""
     
     response = client.responses.create(
         model=MODEL,
-        messages=[
+        input=[
             {
                 "role": "system",
                 "content": system_prompt
@@ -89,47 +89,49 @@ Do not repeat the keys in the JSON output."""
             }
         ],
         text={
-            "type": "json_schema",
-            "json_schema": {
-                "name": "rfp_breakdown",
-                "strict": True,
-                "schema": {
-                    "type": "object",
-                    "properties": {
-                        "background_and_context": {
-                            "type": "array",
-                            "items": {"type": "string"}
+            "format":{
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "rfp_breakdown",
+                    "strict": True,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "background_and_context": {
+                                "type": "array",
+                                "items": {"type": "string"}
+                            },
+                            "objectives_and_problems": {
+                                "type": "array",
+                                "items": {"type": "string"}
+                            },
+                            "evaluation_criteria": {
+                                "type": "array",
+                                "items": {"type": "string"}
+                            },
+                            "rules_and_guidelines": {
+                                "type": "array",
+                                "items": {"type": "string"}
+                            },
+                            "scope_of_work": {
+                                "type": "array",
+                                "items": {"type": "string"}
+                            },
+                            "questions_to_answer": {
+                                "type": "array",
+                                "items": {"type": "string"}
+                            }
                         },
-                        "objectives_and_problems": {
-                            "type": "array",
-                            "items": {"type": "string"}
-                        },
-                        "evaluation_criteria": {
-                            "type": "array",
-                            "items": {"type": "string"}
-                        },
-                        "rules_and_guidelines": {
-                            "type": "array",
-                            "items": {"type": "string"}
-                        },
-                        "scope_of_work": {
-                            "type": "array",
-                            "items": {"type": "string"}
-                        },
-                        "questions_to_answer": {
-                            "type": "array",
-                            "items": {"type": "string"}
-                        }
-                    },
-                    "required": [
-                        "background_and_context",
-                        "objectives_and_problems",
-                        "evaluation_criteria",
-                        "rules_and_guidelines",
-                        "scope_of_work",
-                        "questions_to_answer"
-                    ],
-                    "additionalProperties": False
+                        "required": [
+                            "background_and_context",
+                            "objectives_and_problems",
+                            "evaluation_criteria",
+                            "rules_and_guidelines",
+                            "scope_of_work",
+                            "questions_to_answer"
+                        ],
+                        "additionalProperties": False
+                    }
                 }
             }
         }
