@@ -11,9 +11,9 @@ from dotenv import load_dotenv
 from processes.persona_gen import run_persona_generation
 from processes.deck_gen.generate_deck import run_deck_generation
 from processes.rfp_launchpad.rfp_breakdown import breakdown_rfp
-from processes.rfp_launchpad.rfp_answer import answer_rfp_questions
+from processes.rfp_launchpad.rfp_answer import answer_rfp_questions, RESPONSE_MODEL, TOP_K
 
-from services import get_google_services, send_deck_with_attachment
+from services import get_google_services, send_deck_with_attachment, send_rfp_answers_email
 from services.gdrive_service import extract_pdf_text_from_drive
 
 # ---------- Bootstrap ----------
@@ -126,7 +126,7 @@ def forms_webhook():
         elif(desired_tool == "RFP LaunchPad"):
 
             # Get Google services for Google Drive
-            _, drive_service, _ = get_google_services()
+            _, drive_service, gmail_service = get_google_services()
             
             file_id = form_data["rfp_id"][0]
             print(f"📋 Attempting to extract PDF from Drive with file_id: {file_id}")
@@ -140,14 +140,56 @@ def forms_webhook():
                 print(f"✅ RFP breakdown complete")
                 
                 # Answer the RFP questions
-                answers = answer_rfp_questions(breakdown["questions_to_answer"])
-                print(f"✅ RFP questions answered: {answers}")
+                result = answer_rfp_questions(breakdown["questions_to_answer"])
+                answers = result["answers"]
+                metadata = result["metadata"]
+                print(f"✅ RFP questions answered: {len(answers)} questions")
+                
+                # Send email with results
+                recipient_email = form_data.get("email")
+                if recipient_email:
+                    try:
+                        # Calculate average relevance score from answers
+                        relevance_scores = [ans.get('avg_relevance_score', 0) for ans in answers if ans.get('avg_relevance_score')]
+                        avg_relevance = sum(relevance_scores) / len(relevance_scores) if relevance_scores else 0.0
+                        
+                        # Format runtime
+                        elapsed = metadata.get("elapsed_time", 0)
+                        if elapsed < 60:
+                            runtime_human = f"{elapsed:.1f} seconds"
+                        elif elapsed < 3600:
+                            runtime_human = f"{elapsed / 60:.1f} minutes"
+                        else:
+                            runtime_human = f"{elapsed / 3600:.2f} hours"
+                        
+                        # Prepare run metadata for email
+                        run_metadata = {
+                            "total_questions": metadata.get("total_questions", len(answers)),
+                            "total_time": elapsed,
+                            "runtime_human": runtime_human,
+                            "avg_relevance_score": avg_relevance,
+                            "model_used": RESPONSE_MODEL,
+                            "top_k": TOP_K
+                        }
+                        
+                        # Send email
+                        send_rfp_answers_email(
+                            gmail_service=gmail_service,
+                            recipient_email=recipient_email,
+                            answers=answers,
+                            run_metadata=run_metadata
+                        )
+                        print(f"✅ RFP answers emailed to {recipient_email}")
+                    except Exception as email_error:
+                        print(f"⚠️ RFP answers generated but email failed: {email_error}")
+                        # Don't fail the whole request if email fails
+                else:
+                    print("⚠️ No email provided, skipping email notification")
             
             except Exception as e:
-                print(f"❌ Error extracting PDF from Drive: {e}")
+                print(f"❌ Error in RFP LaunchPad pipeline: {e}")
                 print(f"Full traceback: {traceback.format_exc()}")
-                return jsonify({"error": f"Failed to extract PDF: {str(e)}"}), 500
-            
+                return jsonify({"error": f"RFP LaunchPad failed: {str(e)}"}), 500
         
         return jsonify({
             "status": "success"         

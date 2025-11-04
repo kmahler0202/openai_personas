@@ -6,6 +6,7 @@ Takes questions extracted from RFP breakdown and answers them one by one with re
 
 import os
 import sys
+import time
 from typing import List, Dict, Any
 from pathlib import Path
 from openai import OpenAI
@@ -177,7 +178,7 @@ Your task is to:
     }
 
 
-def answer_rfp_questions(questions: List[str], top_k: int = TOP_K) -> List[Dict[str, Any]]:
+def answer_rfp_questions(questions: List[str], top_k: int = TOP_K) -> Dict[str, Any]:
     """
     Answer multiple RFP questions using RAG.
     
@@ -186,8 +187,9 @@ def answer_rfp_questions(questions: List[str], top_k: int = TOP_K) -> List[Dict[
         top_k: Number of context chunks to retrieve per question
         
     Returns:
-        List of answer dictionaries, one per question
+        Dictionary with answers and metadata
     """
+    start_time = time.time()
     print(f"\n{'='*80}")
     print(f"RFP QUESTION ANSWERING SYSTEM")
     print(f"{'='*80}")
@@ -222,11 +224,23 @@ def answer_rfp_questions(questions: List[str], top_k: int = TOP_K) -> List[Dict[
                 "confidence": "error"
             })
     
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    
     print(f"\n{'='*80}")
     print(f"✅ COMPLETED: Answered {len(answers)}/{len(questions)} questions")
     print(f"{'='*80}\n")
     
-    return answers
+    return {
+        "answers": answers,
+        "metadata": {
+            "start_time": start_time,
+            "end_time": end_time,
+            "elapsed_time": elapsed_time,
+            "questions_answered": len(answers),
+            "total_questions": len(questions)
+        }
+    }
 
 
 def format_answers_for_output(answers: List[Dict[str, Any]]) -> str:
@@ -254,9 +268,9 @@ def format_answers_for_output(answers: List[Dict[str, Any]]) -> str:
     return "\n".join(output)
 
 
-def save_answers_to_file(answers: List[Dict[str, Any]], output_path: str):
+def save_answers_to_file(answers: Dict[str, Any], output_path: str):
     """Save answers to a text file."""
-    formatted_output = format_answers_for_output(answers)
+    formatted_output = format_answers_for_output(answers["answers"])
     
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(formatted_output)

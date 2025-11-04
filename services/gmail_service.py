@@ -247,3 +247,176 @@ def send_deck_with_attachment(
     except Exception as e:
         print(f"❌ Failed to send email with attachment: {e}")
         raise
+
+
+def send_rfp_answers_email(
+    gmail_service,
+    recipient_email: str,
+    answers: list,
+    run_metadata: dict
+) -> Dict[str, Any]:
+    """
+    Send an email with RFP questions, answers, and performance report.
+    
+    This function sends a professionally formatted email with:
+    - All RFP questions and their answers
+    - Performance metrics (runtime, average relevance score)
+    - Confidence breakdown by question
+    - Source documents used
+    
+    Args:
+        gmail_service: Authenticated Gmail API service client
+        recipient_email: Recipient's email address
+        answers: List of answer dictionaries from rfp_answer.py
+        run_metadata: Dictionary containing:
+            - total_questions: Number of questions answered
+            - total_time: Total runtime in seconds
+            - runtime_human: Human-readable runtime
+            - avg_relevance_score: Average relevance score across all questions
+            - model_used: AI model used for generation
+            - top_k: Number of context chunks per question
+    
+    Returns:
+        dict: Response from Gmail API
+    """
+    total_questions = run_metadata.get("total_questions", len(answers))
+    runtime = run_metadata.get("runtime_human", "Unknown")
+    avg_score = run_metadata.get("avg_relevance_score", 0.0)
+    model = run_metadata.get("model_used", "Unknown")
+    top_k = run_metadata.get("top_k", "Unknown")
+    
+    # Calculate confidence breakdown
+    confidence_counts = {"high": 0, "medium": 0, "low": 0, "error": 0}
+    for answer in answers:
+        conf = answer.get("confidence", "error")
+        confidence_counts[conf] = confidence_counts.get(conf, 0) + 1
+    
+    # Collect all unique sources
+    all_sources = set()
+    for answer in answers:
+        all_sources.update(answer.get("sources", []))
+    
+    subject = f"RFP Answers Complete - {total_questions} Questions Answered 📋"
+    
+    # Build Q&A section HTML
+    qa_html = ""
+    for i, answer in enumerate(answers, 1):
+        confidence = answer.get("confidence", "unknown")
+        confidence_emoji = {
+            "high": "🟢",
+            "medium": "🟡",
+            "low": "🟠",
+            "error": "🔴"
+        }.get(confidence, "⚪")
+        
+        qa_html += f"""
+        <div style="margin-bottom: 30px; padding: 20px; background-color: #f9fafb; border-left: 4px solid #2563eb; border-radius: 5px;">
+          <h3 style="color: #1f2937; margin-top: 0;">Question {i} {confidence_emoji}</h3>
+          <p style="font-weight: bold; color: #374151; margin-bottom: 15px;">{answer.get('question', 'Unknown question')}</p>
+          
+          <h4 style="color: #4b5563; margin-bottom: 10px;">Answer:</h4>
+          <p style="color: #1f2937; line-height: 1.6; white-space: pre-wrap;">{answer.get('answer', 'No answer available')}</p>
+          
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #d1d5db;">
+            <p style="font-size: 14px; color: #6b7280; margin: 5px 0;">
+              <strong>Confidence:</strong> {confidence.capitalize()} {confidence_emoji}
+            </p>
+            <p style="font-size: 14px; color: #6b7280; margin: 5px 0;">
+              <strong>Sources:</strong> {', '.join(answer.get('sources', ['None']))}
+            </p>
+            {f'<p style="font-size: 14px; color: #6b7280; margin: 5px 0;"><strong>Relevance Score:</strong> {answer.get("avg_relevance_score", 0):.3f}</p>' if answer.get('avg_relevance_score') else ''}
+          </div>
+        </div>
+        """
+    
+    body_html = f"""
+    <html>
+      <body style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px;">
+        <h2 style="color: #2563eb; border-bottom: 3px solid #2563eb; padding-bottom: 10px;">✅ RFP Answers Complete</h2>
+
+        <p style="font-size: 16px; color: #374151;">Your RFP questions have been answered using AI-powered RAG (Retrieval-Augmented Generation) with our knowledge base.</p>
+
+        <!-- Performance Summary -->
+        <div style="background-color: #eff6ff; padding: 20px; border-radius: 8px; margin: 25px 0;">
+          <h3 style="margin-top: 0; color: #1e40af;">📊 Performance Summary</h3>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 8px 0; color: #4b5563;"><strong>Total Questions:</strong></td>
+              <td style="padding: 8px 0; color: #1f2937; text-align: right;">{total_questions}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #4b5563;"><strong>Total Runtime:</strong></td>
+              <td style="padding: 8px 0; color: #1f2937; text-align: right;">{runtime}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #4b5563;"><strong>Avg Relevance Score:</strong></td>
+              <td style="padding: 8px 0; color: #1f2937; text-align: right;">{avg_score:.3f}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #4b5563;"><strong>Model Used:</strong></td>
+              <td style="padding: 8px 0; color: #1f2937; text-align: right;">{model}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #4b5563;"><strong>Context Chunks/Question:</strong></td>
+              <td style="padding: 8px 0; color: #1f2937; text-align: right;">{top_k}</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Confidence Breakdown -->
+        <div style="background-color: #f0fdf4; padding: 20px; border-radius: 8px; margin: 25px 0;">
+          <h3 style="margin-top: 0; color: #15803d;">🎯 Confidence Breakdown</h3>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 8px 0; color: #4b5563;">🟢 <strong>High Confidence:</strong></td>
+              <td style="padding: 8px 0; color: #1f2937; text-align: right;">{confidence_counts['high']} questions</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #4b5563;">🟡 <strong>Medium Confidence:</strong></td>
+              <td style="padding: 8px 0; color: #1f2937; text-align: right;">{confidence_counts['medium']} questions</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #4b5563;">🟠 <strong>Low Confidence:</strong></td>
+              <td style="padding: 8px 0; color: #1f2937; text-align: right;">{confidence_counts['low']} questions</td>
+            </tr>
+            {f'<tr><td style="padding: 8px 0; color: #4b5563;">🔴 <strong>Errors:</strong></td><td style="padding: 8px 0; color: #1f2937; text-align: right;">{confidence_counts["error"]} questions</td></tr>' if confidence_counts['error'] > 0 else ''}
+          </table>
+        </div>
+
+        <!-- Sources Used -->
+        <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 25px 0;">
+          <h3 style="margin-top: 0; color: #92400e;">📚 Knowledge Sources Used</h3>
+          <p style="color: #78350f; margin: 0;">
+            {', '.join(sorted(all_sources)) if all_sources else 'No sources available'}
+          </p>
+        </div>
+
+        <!-- Questions and Answers -->
+        <h2 style="color: #1f2937; margin-top: 40px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">Questions & Answers</h2>
+        
+        {qa_html}
+
+        <!-- Footer -->
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e5e7eb; text-align: center; color: #9ca3af; font-size: 14px;">
+          <p>Generated by RFP Launchpad • AI-Powered RFP Response System</p>
+        </div>
+      </body>
+    </html>
+    """
+    
+    message = MIMEText(body_html, "html")
+    message["to"] = recipient_email
+    message["subject"] = subject
+    
+    raw = base64.urlsafe_b64encode(message.as_bytes()).decode()
+    
+    try:
+        sent = gmail_service.users().messages().send(
+            userId="me",
+            body={"raw": raw}
+        ).execute()
+        print(f"📧 RFP answers email sent to {recipient_email} (Message ID: {sent['id']})")
+        return sent
+    except Exception as e:
+        print(f"❌ Failed to send RFP answers email: {e}")
+        raise
