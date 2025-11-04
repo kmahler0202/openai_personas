@@ -30,7 +30,7 @@ from services import get_google_services, upload_markdown_to_doc, share_document
 client = OpenAI()
 gemini_client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
-model = "gpt-5-mini"
+model = "gpt-5"
 
 
 # ==============================================================

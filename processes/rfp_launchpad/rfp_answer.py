@@ -28,7 +28,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Configuration
 EMBEDDING_MODEL = "text-embedding-3-small"
-RESPONSE_MODEL = "gpt-4o-mini"
+RESPONSE_MODEL = "gpt-5-mini"
 TOP_K = 5  # Number of context chunks to retrieve per question
 
 
@@ -151,8 +151,6 @@ Your task is to:
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
         ],
-        temperature=0.7,
-        max_tokens=1500
     )
     
     answer = response.choices[0].message.content.strip()
@@ -209,8 +207,8 @@ def answer_rfp_questions(questions: List[str], top_k: int = TOP_K) -> List[Dict[
             answers.append(result)
             
             # Display answer summary
-            print(f"\n💡 Answer Preview:")
-            print(f"{result['answer'][:200]}..." if len(result['answer']) > 200 else result['answer'])
+            print(f"\n💡 Answer:")
+            print(f"{result['answer']}")
             print(f"\n📚 Sources: {', '.join(result['sources'])}")
             print(f"🎯 Confidence: {result['confidence']}")
             
