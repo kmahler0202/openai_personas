@@ -30,7 +30,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # Configuration
 EMBEDDING_MODEL = "text-embedding-3-small"
 RESPONSE_MODEL = "gpt-5-mini"
-TOP_K = 5  # Number of context chunks to retrieve per question
+TOP_K = 20  # Number of context chunks to retrieve per question
 
 
 def generate_query_embedding(query: str) -> List[float]:
@@ -118,18 +118,18 @@ def answer_single_question(question: str, top_k: int = TOP_K) -> Dict[str, Any]:
     # Step 3: Generate answer using OpenAI
     print(f"🤖 Generating answer...")
     
-    system_prompt = """You are an expert assistant helping to respond to RFP (Request for Proposal) questions.
+    system_prompt = """You are an expert assistant helping to respond to RFP (Request for Proposal) questions for the Mx Group, a B2B marketing agency.
 
 Your task is to:
 1. Answer the RFP question using ONLY the information provided in the context
 2. Provide detailed, professional, and well-structured answers
 3. If the context contains relevant information, synthesize it into a comprehensive response
 4. If the context doesn't contain enough information, clearly state what's missing
-5. Cite sources when relevant (e.g., "According to [source name]...")
-6. Be specific and include relevant details, examples, and methodologies when available
-7. Structure your answer with clear paragraphs or bullet points as appropriate"""
+5. Be specific and include relevant details, examples, and methodologies when available
+6. Structure your answer with clear paragraphs or bullet points as appropriate
+7. Exclude any additional suggestions or reccomendations. Just the 6 points above."""
 
-    user_prompt = f"""Based on the following context from our company's documents and materials, please answer this RFP question:
+    user_prompt = f"""Based on the following context from the Mx Group's documents and materials, please answer this RFP question:
 
 **RFP Question:**
 {question}

@@ -65,7 +65,10 @@ For each category, provide a clear, well-organized summary of the relevant infor
 3. **Evaluation Criteria & Decision Logic**: How proposals will be evaluated, scoring criteria, decision-making factors, weighting
 4. **Rules/Response Guidelines/Format Instructions**: Submission requirements, formatting rules, deadlines, proposal structure requirements
 5. **Statement of Need/Scope of Work**: Specific work to be performed, deliverables, project scope, technical requirements
-6. **Questions That Need to Be Answered**: Specific questions posed to vendors, information requests, clarifications needed
+6. **Questions That Need to Be Answered**: Specific questions posed to vendors, information requests, clarifications needed. These should only be direct questions asked by the prospect about our capabilities, not actions that need to be taken by our agency, such as confirmation of intent to bid.
+    - This section also should not include any requests for digital assets or filling out of forms, excel sheets, etc.
+    - If any of questions that you find make explicit references to other parts of the document, such as "see section X", append all relevant information from that section after the question.
+    - Please make sure that each question is filed one at a time.
 
 Here is the RFP document:
 

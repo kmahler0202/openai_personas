@@ -42,7 +42,7 @@ CHUNK_SIZE = 1500
 CHUNK_OVERLAP = 300
 
 DEFAULT_DOMAIN = "https://themxgroup.com/"
-DEFAULT_MAX_PAGES = 600          # safety rail for Starter tier
+DEFAULT_MAX_PAGES = 3000          # safety rail for Starter tier
 DEFAULT_MAX_TOTAL_CHARS = 3_000_000  # ~3M chars cap before embedding
 
 HEADERS = {

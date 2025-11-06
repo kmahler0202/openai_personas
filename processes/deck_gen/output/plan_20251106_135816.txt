@@ -1,0 +1,221 @@
+Below is a concise, human‑readable slide plan with recommended layouts and exact fields to populate. I’ve stayed within each layout’s guardrails (character limits, required fields) and provided placeholder-by-placeholder content guidance. DO NOT USE layouts were avoided.
+
+Slide 1 — Cover
+- Layout: Team Background, White Text, Title Slide (master 0, layout 0)
+- Use for: Primary opener with date
+- Placeholders to fill:
+  - title_main (≤45 chars): AI in B2B Services: Adoption, Value, Risk
+  - subtitle (≤40 chars): What leading agencies say—and do
+  - todays_date (required): November 2025
+
+Slide 2 — Agenda
+- Layout: B&W Background, B&W Text, Numbered List (master 0, layout 8)
+- Guardrails: Title ≤6 chars; ≤6 items; ≤25 chars/item
+- Placeholders to fill:
+  - title_main: Agenda
+  - body_bullets (6 items max):
+    1) Adoption surge
+    2) Where value accrues
+    3) Risks of lagging
+    4) What leaders say
+    5) Implications
+    6) Next steps
+
+Section 1: The rapid expansion of AI usage
+
+Slide 3 — Section Thesis
+- Layout: Black Background, White Text, Statement Slide w/ Subtitle (master 0, layout 12)
+- Placeholders to fill:
+  - title_main (≤45 chars): AI adoption is accelerating
+  - subtitle (≤40 chars): Across service lines and sizes
+
+Slide 4 — Adoption Trend (Chart)
+- Layout: White Background, Black Text, Title and Chart (master 0, layout 27)
+- Placeholders to fill:
+  - title_main (≤30 chars): Share of agencies using AI
+  - chart_content: Line chart, 2022–2025 (or latest), % of B2B agencies integrating AI into service delivery; source callouts: Gartner, Forrester, WARC, ANA, proprietary surveys (insert actual data)
+
+Slide 5 — Use Cases On The Rise (Table)
+- Layout: White Background, Black Text, Title and Table (master 0, layout 29)
+- Placeholders to fill:
+  - title_main (≤30 chars): Most-used AI use cases
+  - subtitle: Delivery-focused and internal ops
+  - content_table: Columns: Use case | Primary user | 2023 vs 2025 adoption | Tool examples | Source
+    - Rows (examples to research/fill): Content drafting, Personalization, QA/testing, Analytics/insights, Media optimization, Coding co-pilots
+
+Slide 6 — Tooling Snapshots (2 images)
+- Layout: White Background, Black Text, Two Images Side-By-Side (master 0, layout 26)
+- Placeholders to fill:
+  - title_main: Tooling snapshots
+  - picture_left: Screenshot: co-pilot/chat assistant in workflow
+  - picture_right: Screenshot: creative or data automation in studio
+
+Section 2: The value AI creates across the agency value chain
+
+Slide 7 — Section Thesis
+- Layout: White Background, Black Text, Statement Slide w/ Subtitle (master 0, layout 15)
+- Placeholders to fill:
+  - title_main (≤45 chars): Where AI creates value
+  - subtitle (≤40 chars): Plan, make, market, measure
+
+Slide 8 — Value Across the Chain (3 columns, bullets)
+- Layout: White Background, Black Text, Three Column Comparison (Bulleted) (master 0, layout 34)
+- Placeholders to fill:
+  - title_main (≤30 chars): Value across the chain
+  - content_left_bullets (prefix first bullet with “Plan” to serve as a label, then bullets):
+    - Plan:
+    - Faster research synthesis
+    - Audience insight mining
+    - Brief/requirements clarity
+  - content_middle_bullets:
+    - Make:
+    - Content velocity gains
+    - Code/automation assists
+    - Creative iteration speed
+  - content_right_bullets:
+    - Measure:
+    - Real-time performance
+    - QA and brand safety
+    - Insight-to-action speed
+
+Slide 9 — Value: Agencies vs Clients (two titled boxes)
+- Layout: White Background, Black Text, Two Titles two Content Boxes (Non-Bulleted) w/ Header (master 0, layout 37)
+- Placeholders to fill:
+  - header: Value created
+  - title_main_left: For Agencies
+  - content_left_non_bullets: Margin expansion via automation; faster throughput; higher win rates with AI-augmented strategy, concepts, and evidence; new packaged AI services and advisory revenue.
+  - title_main_right: For Clients
+  - content_right_non_bullets: Shorter time-to-value; increased personalization and conversion; better consistency/quality via automated QA; transparent performance insights.
+
+Slide 10 — Before vs After (service delivery transformation)
+- Layout: B&W Split Background, Before-After w/ 5 Text Boxes Each (master 0, layout 16)
+- Guardrails: Column titles ≤15 chars; 5 items each; ≤25 chars/item
+- Placeholders to fill:
+  - title_left: Before (No AI)
+  - title_right: After (With AI)
+  - text_box_1_left: Manual research
+  - text_box_2_left: Siloed briefs
+  - text_box_3_left: Linear production
+  - text_box_4_left: Hourly QA
+  - text_box_5_left: Post-mortem learnings
+  - text_box_1_right: Auto-synth research
+  - text_box_2_right: Live, shared briefs
+  - text_box_3_right: Parallelized making
+  - text_box_4_right: Continuous QA
+  - text_box_5_right: Real-time insights
+
+Slide 11 — Case Example (content ops)
+- Layout: White Background, Black Text, Title and Content w/ Right Picture w/ Header (master 0, layout 40)
+- Placeholders to fill:
+  - header: Case example
+  - title_main (≤30 chars): Content ops acceleration
+  - content_left: Context: B2B tech client; Challenge: low content throughput; Approach: AI-assisted briefs, generation, QA; Outcome: higher velocity, stable quality, lower costs (insert metrics once validated).
+  - picture_right: Workflow/screenshot (editorial pipeline or co-pilot)
+
+Section 3: Risks of not integrating AI
+
+Slide 12 — Section Thesis
+- Layout: Black Background, White Text, Statement Slide w/ Subtitle (master 0, layout 12)
+- Placeholders to fill:
+  - title_main (≤45 chars): The cost of not integrating AI
+  - subtitle (≤40 chars): Higher costs, slower delivery, churn
+
+Slide 13 — Top Risks (numbered)
+- Layout: B&W Background, B&W Text, Numbered List (master 0, layout 8)
+- Placeholders to fill:
+  - title_main: Risks
+  - body_bullets (≤25 chars each):
+    1) Cost base stays high
+    2) Speed loses to rivals
+    3) Quality gaps widen
+    4) Talent attrition
+    5) Compliance exposure
+    6) Missed new revenue
+
+Slide 14 — Risk Impact Matrix (table)
+- Layout: White Background, Black Text, Title and Table (master 0, layout 29)
+- Placeholders to fill:
+  - title_main (≤30 chars): Risk impact matrix
+  - subtitle: Prioritize by impact × likelihood
+  - content_table: Columns: Risk | Impact | Likelihood | Horizon | Mitigation; Rows: Cost inflation, Speed deficit, Quality variance, Brand safety, Data leakage/IP, Talent risks (fill with assessed levels and actions)
+
+Slide 15 — Strategic Position: Now vs Future
+- Layout: B&W Split Background, Before-After w/ 1 Text Box Each (master 0, layout 17)
+- Guardrails: Column titles ≤15 chars; roughly even text length
+- Placeholders to fill:
+  - title_left: Current
+  - body_left: Fragmented tools, ad hoc pilots, limited governance; value pockets but inconsistent outcomes; low reuse of prompts/playbooks.
+  - title_right: AI-Enabled
+  - body_right: Integrated co-pilots, governed datasets, standardized playbooks; measurable speed, quality, and margin gains; reusable assets at scale.
+
+Section 4: Current narrative of top B2B agencies
+
+Slide 16 — Section Thesis
+- Layout: White Background, Black Text, Statement Slide w/ Subtitle (master 0, layout 15)
+- Placeholders to fill:
+  - title_main (≤45 chars): What top agencies say
+  - subtitle (≤40 chars): Public narratives on AI use
+
+Slide 17 — Agency Narratives (table)
+- Layout: White Background, Black Text, Title and Table (master 0, layout 29)
+- Placeholders to fill:
+  - title_main (≤30 chars): Agency AI narratives
+  - subtitle: Themes and proof points
+  - content_table: Columns: Agency | Narrative theme | Proof points (offers/cases) | Source URL; Rows: Populate with validated entries (e.g., “Agency X | GenAI for personalization | Case Y, Offer Z | link”)
+
+Slide 18 — Representative Quotes (with citations)
+- Layout: White Background, Black Test, Content (Non-Bulleted) w/ Footnote (master 0, layout 21)
+- Placeholders to fill:
+  - title_main (≤30 chars): Representative quotes
+  - body_non_bullets: 3–5 short quotes (one per line), each prefixed with agency name and date; keep to 1–2 lines each.
+  - footnote (required): Full citations with URLs and access dates.
+
+Slide 19 — Examples in the Wild (screenshots)
+- Layout: White Background, Black Text, Title and Content in same Box w/ Right Picture w/ Header (master 0, layout 41)
+- Placeholders to fill:
+  - header: Examples from websites
+  - title_main_content_second_level_non_bullets: Short narrative highlighting how sites describe AI (e.g., “Positioned as a ‘co‑pilot’ layer; emphasis on safety, scale, outcomes.”)
+  - picture_right: Collage/screenshot of 2–3 agency AI pages
+
+Recommendations and next steps
+
+Slide 20 — Implications
+- Layout: Black Background, White Text, Statement Slide w/ Subtitle (master 0, layout 12)
+- Placeholders to fill:
+  - title_main (≤45 chars): Implications & next steps
+  - subtitle (≤40 chars): Where we invest now
+
+Slide 21 — Build, Partner, Govern (3 pillars)
+- Layout: White Background, Black Text, Three Column Comparison (Non-Bulleted) w/ Header (master 0, layout 36)
+- Placeholders to fill:
+  - header: Recommendations
+  - title_main (≤30 chars): Build, Partner, Govern
+  - content_left_non_bullets (Build): Core prompts/playbooks; internal co-pilots; data pipelines; measurement; enablement.
+  - content_middle_non_bullets (Partner): Select vendors; integration; managed risk; co-innovation with clients.
+  - content_right_non_bullets (Govern): Policies; approval workflows; brand/data safeguards; model/ROI monitoring.
+
+Slide 22 — Implementation Phases (numbered)
+- Layout: B&W Background, B&W Text, Numbered List (master 0, layout 8)
+- Placeholders to fill:
+  - title_main: Phases
+  - body_bullets (≤25 chars each):
+    1) 0–90d: pilots
+    2) 90–180d: scale wins
+    3) 6–12m: platformize
+    4) Guardrails: finalize
+    5) Train & certify
+
+Slide 23 — Sources & Method
+- Layout: White Background, Black Test, Content (Non-Bulleted) w/ Footnote (master 0, layout 21)
+- Placeholders to fill:
+  - title_main (≤30 chars): Sources & method
+  - body_non_bullets: Outline research scope: public agency sites/press, analyst reports (Gartner/Forrester), trade (WARC/AdExchanger), industry orgs (ANA/4A’s), and proprietary data (if any).
+  - footnote (required): List source links and access dates; note any assumptions and data vintage.
+
+Notes on data and visuals
+- Charts/tables: Insert real, cited data before finalizing. Keep labels legible; avoid overcrowding.
+- Images: Use high-res screenshots with safe margins (especially on two-image and right-image layouts).
+- Character limits: All suggested titles/subtitles adhere to guardrails.
+- Co-branding: If needed, swap the cover to a co-branded title layout (master 0, layout 7) and include the client logo + date.
+
+This sequence cleanly covers the brief’s four objectives: adoption, value across the service chain, risks of not integrating, and the current narratives from leading B2B agencies—ending with practical recommendations and a phased plan.
