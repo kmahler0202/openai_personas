@@ -43,9 +43,20 @@ def breakdown_rfp(pdf_text: str) -> Dict[str, str]:
     6. Questions That Need to Be Answered
     """
     
-    system_prompt = """You are an expert RFP (Request for Proposal) analyst. Your task is to carefully read and categorize RFP documents into 6 specific categories.
+    system_prompt = """You are an expert RFP analyst specializing in preparing RFP documents for downstream Retrieval-Augmented Generation (RAG) pipelines.
 
-Analyze the provided RFP text and extract information for each category. Be thorough and precise.
+Your purpose is not only to categorize the RFP — your primary goal is to prepare all vendor questions in a format that maximizes accuracy during later vector database retrieval.
+
+SPECIAL RULES FOR QUESTIONS:
+    -Every question returned must be standalone and contain all necessary contextual information inside the question itself.
+    -Do not produce vague questions that rely on earlier or external sections.
+    -If a question references another section (ex: “see 3.1 for required services”), you must locate that referenced content inside the RFP and append/inline the relevant information directly into the question so the question can be answered independently later.
+    -Do not include identity assumptions about who “we” or the vendor is — stay vendor neutral and non-personalized. In other words, no question should include the vendors name.
+    -Only include real explicit prospect questions. Do not include “intent to bid” confirmations, form filling instructions, or requests for digital files/assets.
+
+The overall objective is: maximize future retrieval accuracy by converting questions into fully contextualized, atomic, standalone queries.
+
+Return output in strict JSON schema format (keys listed below).
 
 Return your analysis as a JSON object with these exact keys:
 - background_and_context
@@ -65,10 +76,7 @@ For each category, provide a clear, well-organized summary of the relevant infor
 3. **Evaluation Criteria & Decision Logic**: How proposals will be evaluated, scoring criteria, decision-making factors, weighting
 4. **Rules/Response Guidelines/Format Instructions**: Submission requirements, formatting rules, deadlines, proposal structure requirements
 5. **Statement of Need/Scope of Work**: Specific work to be performed, deliverables, project scope, technical requirements
-6. **Questions That Need to Be Answered**: Specific questions posed to vendors, information requests, clarifications needed. These should only be direct questions asked by the prospect about our capabilities, not actions that need to be taken by our agency, such as confirmation of intent to bid.
-    - This section also should not include any requests for digital assets or filling out of forms, excel sheets, etc.
-    - If any of questions that you find make explicit references to other parts of the document, such as "see section X", append all relevant information from that section after the question.
-    - Please make sure that each question is filed one at a time.
+6. **Questions That Need to Be Answered**: Specific questions posed to vendors, information requests, clarifications needed (fully contextualized single questions prepared for RAG retrieval — see system rules above).
 
 Here is the RFP document:
 
