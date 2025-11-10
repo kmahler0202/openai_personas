@@ -111,7 +111,7 @@ def forms_webhook():
                             gmail_service=gmail_service,
                             recipient_email=recipient_email,
                             pptx_path=result["pptx_path"],
-                            deck_title="Dogs - The Future of MX",
+                            deck_title="Mx AI Deck",
                             deck_description=form_data["deck_description"]
                         )
                         print(f"✅ Deck emailed to {recipient_email}")

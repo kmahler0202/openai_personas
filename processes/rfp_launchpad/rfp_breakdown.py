@@ -27,7 +27,7 @@ if not OPENAI_API_KEY:
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Configuration - using lightweight model
-MODEL = "gpt-5-mini"  # Fast and cost-effective
+MODEL = "gpt-5"  # Fast and cost-effective
     
 
 def breakdown_rfp(pdf_text: str) -> Dict[str, str]:

@@ -145,7 +145,7 @@ def generate_deck_pipeline(
         template_map=template_map_data,
         use_cases=use_cases_data,
         deck_meta=deck_meta,
-        brief_text=brief_text,
+        brief_text=plan,
     )
     
     save_json(outline_path, outline)
