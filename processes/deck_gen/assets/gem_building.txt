@@ -1,0 +1,35 @@
+A deck for a presentation to my coworkers (meeting style lunch and learn) all about Gemini Gems
+
+What is a Gem?
+
+A gem is an instance of Google Gemini that has specific instructions and/or knowledge that it always takes into account.
+Tailored to a specific use case or domain.
+
+
+So where do they fit for our agency? (Mx Group)
+They can assist with productivty, creativity, workflows.
+They can fully automate or at least assist in tedious, repetive tasks.
+You all have ideas that me, Brendan, Eric, or Binz would never have.
+This makes everyone an AI creator, enabling us all to discover new ideas.
+
+When to build?
+Repetitive Tasks (Competitive Research like we already built)
+Agency Standards (Spec Librarian like we already built)
+Potentially More here on when to build
+
+When Not to build
+One off explorations (Better equipped doing this with any old LLM)
+
+Examples of Gems we have already built
+Competitive Research
+Spec Librarian
+Ask Binz
+
+How to build Demo
+Pick a clear purpose / use case
+Write instructions and/or role fo the Gem (Use an LLM to help craft this if you want)
+Add Context / knowledge (Show how to do this inside of Gemini Gems)
+Test, refine, share if necessary. Iterative Refinement > One time build
+Show how to use variable placeholders if necessary (Mainly for something like competitive research)
+
+Question and Answer

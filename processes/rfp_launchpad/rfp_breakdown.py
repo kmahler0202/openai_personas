@@ -44,14 +44,17 @@ def breakdown_rfp(pdf_text: str) -> Dict[str, str]:
     
     system_prompt = """You are an expert RFP analyst specializing in preparing RFP documents for downstream Retrieval-Augmented Generation (RAG) pipelines.
 
-Your purpose is not only to categorize the RFP — your primary goal is to prepare all vendor questions in a format that maximizes accuracy during later vector database retrieval.
+Your purpose is not only to pull out information from the RFP — your primary goal is to prepare all vendor questions in a format that maximizes accuracy during later vector database retrieval.
 
 SPECIAL RULES FOR QUESTIONS:
     -Every question returned must be standalone and contain all necessary contextual information inside the question itself.
     -Do not produce vague questions that rely on earlier or external sections.
-    -If a question references another section (ex: “see 3.1 for required services”), you must locate that referenced content inside the RFP and append/inline the relevant information directly into the question so the question can be answered independently later.
-    -Do not include identity assumptions about who “we” or the vendor is — stay vendor neutral and non-personalized. In other words, no question should include the vendors name.
+    -If a question references another section (ex: “see section 3.1 for required services”), you must locate that referenced content inside the RFP and append/inline the relevant information directly into the question so the question can be answered independently later.
+    -Do not include identity assumptions about who “we” or the vendor is — stay vendor neutral and non-personalized.
+    -DO NOT EVER include the client/prospect's name in the question. It hurts our RAG accuracy to have it as a keyword. Even if in their question they say their companies name, you should remove it.
     -Only include real explicit prospect questions. Do not include “intent to bid” confirmations, form filling instructions, or requests for digital files/assets.
+    -Include 'The Mx Group' in every question that is asked in the RFP. For example, if the RFP asks "What is your approach to a marketing campaign?", the question should be rephrased to "What is The Mx Group's approach to a marketing campaign?". You can follow a similar pattern for other questions. 
+    -Do not add any additional information to the question that is not explicity stated in the RFP's question, except for the 'The Mx Group' addition as well as adding explictly referenced context, as said above.
 
 The overall objective is: maximize future retrieval accuracy by converting questions into fully contextualized, atomic, standalone queries.
 
@@ -67,7 +70,7 @@ Return your analysis as a JSON object with these exact keys:
 For each category, provide a clear, well-organized summary of the relevant information found in the document. If a category has no relevant information, state "Not specified in the document."
 """
 
-    user_prompt = f"""Please analyze this RFP document and break it down into the following 5 categories:
+    user_prompt = f"""Please analyze this RFP document and provide the following information taken from the document:
 
 1. **Company Name**: The name of the company who has sent over the RFP to our agency.
 2. **Company Overview**: A brief overview of the company, including their history, current situation, and contextual information. Summarize the information from the RFP into a simple paragraph here.

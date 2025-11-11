@@ -1,6 +1,6 @@
 .env
 venv/
-assets/
+assets/starter_data
 
 processes/deck_gen/assets
 processes/deck_gen/output

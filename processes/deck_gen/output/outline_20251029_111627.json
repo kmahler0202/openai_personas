@@ -1,0 +1,137 @@
+{
+  "deck_meta": {
+    "title": "Dogs - The Future of MX",
+    "author": "Kyle Mahler",
+    "date": "2025-10-29",
+    "brand": "MX"
+  },
+  "deck_slides": [
+    {
+      "layout_name": "White Background, Black Text, Title Slide",
+      "master_index": 0,
+      "layout_index": 4,
+      "placeholders": {
+        "todays_date": "2025-10-29",
+        "subtitle": "3D Metrology Buyers & Content Plan",
+        "title_main": "Dogs - The Future of MX"
+      }
+    },
+    {
+      "layout_name": "B&W Background, B&W Text, Numbered List",
+      "master_index": 0,
+      "layout_index": 8,
+      "placeholders": {
+        "title_main": "Agenda",
+        "body_bullets": "Ecosystem overview\nPrimary buyers\nMotivations & KPIs\nRisks & concerns\nInfo sources\nContent plan by funnel"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Text, Content (Non-Bulleted)",
+      "master_index": 0,
+      "layout_index": 20,
+      "placeholders": {
+        "body_non_bullets": "The 3D metrology buying committee in discrete mfg spans Ops (economic), Quality (technical), Metrology/QA (users), Manufacturing Engineering (integration), Procurement (commercial), and IT/OT (security).\nInfluencers: system integrators, machine tool OEMs, peer plants, and corporate standards.",
+        "title_main": "Buyer ecosystem"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 23,
+      "placeholders": {
+        "body_bullets": "Motivations: throughput, OTD, cost\nKPIs: FPY, scrap %, OEE, uptime\nConcerns: downtime, complexity, ROI\nRole: economic sponsor/approver\nWins: faster PPAP, inline checks",
+        "title_main": "VP/Dir Operations"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 23,
+      "placeholders": {
+        "body_bullets": "Motivations: schedule hit rate, labor\nKPIs: changeover time, units/hour\nConcerns: floor space, training\nRole: site champion/operator owner\nWins: shorter cycles, fewer holds",
+        "title_main": "Plant Manager"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 23,
+      "placeholders": {
+        "body_bullets": "Motivations: compliance, escapes ↓\nKPIs: PPM, FPY, Cpk/Ppk, audit pass\nConcerns: accuracy, GR&R, traceability\nRole: requirements co-owner\nWins: faster inspection, release",
+        "title_main": "VP/Dir Quality"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 23,
+      "placeholders": {
+        "body_bullets": "Motivations: accuracy, ease, speed\nKPIs: uncertainty, cycle/part, auto %\nConcerns: calibration, fixturing, SPC/MES\nRole: champion; specs, GR&R eval\nWins: robust programs, digital thread",
+        "title_main": "Metrology/QA Manager"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 23,
+      "placeholders": {
+        "body_bullets": "Motivations: capability, DFM feedback\nKPIs: FAI lead time, changeover\nConcerns: cell/robot integration\nRole: integration owner/influencer\nWins: closed-loop CNC corrections",
+        "title_main": "Manufacturing Eng Lead"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 23,
+      "placeholders": {
+        "body_bullets": "Motivations: TCO, risk, standardize\nKPIs: savings %, payback, SLA score\nConcerns: lock-in, lead times, warranty\nRole: negotiate/contract\nWins: favorable T&Cs, rollout plan",
+        "title_main": "Procurement/Sourcing"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 23,
+      "placeholders": {
+        "body_bullets": "Motivations: security, uptime, governance\nKPIs: vuln count, patching, RPO/RTO\nConcerns: network, OS, remote access\nRole: connectivity/security approver\nWins: secure, low-admin integration",
+        "title_main": "IT/OT & Cybersecurity"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 23,
+      "placeholders": {
+        "body_bullets": "Trade shows: IMTS, Control, Quality\nTrade media: Quality Mag, MMS, SME\nStandards: ISO/ASME, NIST MEP\nPeers: SIs, OEM apps engineers\nDigital: LinkedIn, webinars, YouTube",
+        "title_main": "Info sources"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 23,
+      "placeholders": {
+        "body_bullets": "Thought leadership: Zero Defect (Ops/QA)\nBenchmark: FPY/scrap by sector (Ops/QA)\nExplainer video: 3D options (QA/Eng)\nPlant tour case story (All)\nROI calculator teaser (Ops/Proc)",
+        "title_main": "Upper-funnel content"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 23,
+      "placeholders": {
+        "body_bullets": "Buyer’s guide: specs & fit (QA/Eng)\nUse-case briefs: FAI, inline (Ops/QA)\nGR&R kit + sample data (QA)\nIntegration notes: MES/SPC/PLC (Eng/IT)\nLive webinar + Q&A (All)",
+        "title_main": "Middle-funnel content"
+      }
+    },
+    {
+      "layout_name": "White Background, Black Test, Content (Bulleted)",
+      "master_index": 0,
+      "layout_index": 23,
+      "placeholders": {
+        "body_bullets": "Pilot/POC plan + success criteria (Ops/QA)\nBusiness case + TCO model (Ops/Proc)\nValidation pack: MSA, calibration (QA)\nReference calls/site visits (Ops/QA)\nImplementation runbook + SLA (Ops/IT)",
+        "title_main": "Lower-funnel content"
+      }
+    }
+  ]
+}
