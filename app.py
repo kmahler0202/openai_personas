@@ -8,10 +8,16 @@ from typing import Dict, Any, List, Optional
 from flask import Flask, request, jsonify
 from dotenv import load_dotenv
 
+# Persona Generation Imports
 from processes.persona_gen import run_persona_generation
+
+# Deck Generation Imports
 from processes.deck_gen.generate_deck import run_deck_generation
+
+# RFP Launchpad Imports
 from processes.rfp_launchpad.rfp_breakdown import breakdown_rfp
 from processes.rfp_launchpad.rfp_answer import answer_rfp_questions, RESPONSE_MODEL, TOP_K
+from processes.rfp_launchpad.identify_sme import identify_sme
 
 from services import get_google_services, send_deck_with_attachment, send_rfp_answers_email
 from services.gdrive_service import extract_pdf_text_from_drive
@@ -49,7 +55,8 @@ def _normalize_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
         "tool": payload.get("Select Desired Tool", ""),
         "deck_description": payload.get("Description", ""),
         "rfp_id": payload.get("Submit RFP Here", ""),
-        # TODO: Add RFP LaunchPad fields, figure out what uploading the file looks like in the payload. Possibly just a link to it?--
+        "new_prospect": True if payload.get("New Prospect?", "") == "Yes" else False,
+        # TODO: figure out what the rest of the RFP LP fields are.
     }
 
     # Optional idempotency key if caller sends it
@@ -138,6 +145,11 @@ def forms_webhook():
                 # Breakdown the RFP
                 breakdown = breakdown_rfp(pdf_text)
                 print(f"✅ RFP breakdown complete")
+
+                # Identify the best SME
+                for question in breakdown["questions_to_answer"]:
+                    sme = identify_sme(question)
+                    print(f"✅ SME identified: {sme['full_name']} ({sme['role']}, {sme['department']}, {sme['email']})")
                 
                 # Answer the RFP questions
                 result = answer_rfp_questions(breakdown["questions_to_answer"])

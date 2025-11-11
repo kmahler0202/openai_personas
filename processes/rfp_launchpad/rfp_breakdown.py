@@ -85,7 +85,7 @@ Here is the RFP document:
 
 {pdf_text}
 
-Provide your analysis in JSON format with the keys: background_and_context, objectives_and_problems, evaluation_criteria, rules_and_guidelines, scope_of_work, questions_to_answer
+Provide your analysis in JSON format with the keys: company_name, company_overview, objective, scope_of_work, questions_to_answer
 Do not repeat the keys in the JSON output."""
 
     print("🔄 Analyzing RFP with OpenAI...")
@@ -102,7 +102,7 @@ Do not repeat the keys in the JSON output."""
                 "content": user_prompt
             }
         ],
-        text={
+        text={  
             "format":{
                 "type": "json_schema",
                 "name": "rfp_breakdown",

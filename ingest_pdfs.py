@@ -258,7 +258,7 @@ def main():
         doc_id = sys.argv[2] if len(sys.argv) > 2 else None
         
         if not os.path.exists(pdf_path):
-            print(f"❌ Error: File not found: {pdf_path}")
+            print(f"❌ Error: File not found: {pdf_path}")  
             sys.exit(1)
         
         ingest_pdf(pdf_path, doc_id)
