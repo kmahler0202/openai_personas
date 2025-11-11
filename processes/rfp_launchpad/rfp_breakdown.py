@@ -26,8 +26,7 @@ if not OPENAI_API_KEY:
 # Initialize OpenAI client
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-# Configuration - using lightweight model
-MODEL = "gpt-5"  # Fast and cost-effective
+MODEL = "gpt-5" 
     
 
 def breakdown_rfp(pdf_text: str) -> Dict[str, str]:
@@ -59,24 +58,25 @@ The overall objective is: maximize future retrieval accuracy by converting quest
 Return output in strict JSON schema format (keys listed below).
 
 Return your analysis as a JSON object with these exact keys:
-- background_and_context
-- objectives_and_problems
-- evaluation_criteria
-- rules_and_guidelines
+- company_name
+- company_overview
+- objective
 - scope_of_work
 - questions_to_answer
 
 For each category, provide a clear, well-organized summary of the relevant information found in the document. If a category has no relevant information, state "Not specified in the document."
 """
 
-    user_prompt = f"""Please analyze this RFP document and break it down into the following 6 categories:
+    user_prompt = f"""Please analyze this RFP document and break it down into the following 5 categories:
 
-1. **Background & Context**: Company background, project history, current situation, and contextual information
-2. **Objectives/Problem Statements**: What they're trying to achieve, problems they're solving, goals and desired outcomes
-3. **Evaluation Criteria & Decision Logic**: How proposals will be evaluated, scoring criteria, decision-making factors, weighting
-4. **Rules/Response Guidelines/Format Instructions**: Submission requirements, formatting rules, deadlines, proposal structure requirements
-5. **Statement of Need/Scope of Work**: Specific work to be performed, deliverables, project scope, technical requirements
-6. **Questions That Need to Be Answered**: Specific questions posed to vendors, information requests, clarifications needed (fully contextualized single questions prepared for RAG retrieval — see system rules above).
+1. **Company Name**: The name of the company who has sent over the RFP to our agency.
+2. **Company Overview**: A brief overview of the company, including their history, current situation, and contextual information. Summarize the information from the RFP into a simple paragraph here.
+3. **Objective**: What they're trying to achieve, problems they're solving, goals and desired outcomes
+4. **Scope of Work**: Specific work to be performed, deliverables, project scope, technical requirements.
+5. **Questions That Need to Be Answered**: The specific questions that are posed to our agency. These questions should be phrased in a way that maximizes retrival accuracy. For example, each and every questions should be rephrased to be vendor-neutral while containing the name of our agency, The Mx Group.
+    - For example, say we are responding to an RFP from company X, and they ask the question "What is would your approach to a marketing campaign be for company X?". The question should be rephrased to "What kind of approach would The Mx Group take in a marketing campaign?"
+    - Additionally, some questions make direct references to other areas in the RFP. For example, if the RFP has a section titled "Statement of Need" which maps out services that they want their agency to have, and a specific question asks "Is your agency able to provide the services outline in the statement of need", the correct rephrasing would be "Is The Mx Group able to provide the services listed here: (with then the services form the statement of need section appended here)
+    - To maximize retrieval accuracy, questions should always stay separate from eachother, and no matter how similar two questions may be, they should not ever be combined into a single question.
 
 Here is the RFP document:
 
@@ -106,25 +106,17 @@ Do not repeat the keys in the JSON output."""
                 "schema": {
                         "type": "object",
                         "properties": {
-                            "background_and_context": {
-                                "type": "array",
-                                "items": {"type": "string"}
+                            "company_name": {
+                                "type": "string",
                             },
-                            "objectives_and_problems": {
-                                "type": "array",
-                                "items": {"type": "string"}
+                            "company_overview": {
+                                "type": "string",
                             },
-                            "evaluation_criteria": {
-                                "type": "array",
-                                "items": {"type": "string"}
-                            },
-                            "rules_and_guidelines": {
-                                "type": "array",
-                                "items": {"type": "string"}
+                            "objective": {
+                                "type": "string",
                             },
                             "scope_of_work": {
-                                "type": "array",
-                                "items": {"type": "string"}
+                                "type": "string",
                             },
                             "questions_to_answer": {
                                 "type": "array",
@@ -132,10 +124,9 @@ Do not repeat the keys in the JSON output."""
                             }
                         },
                         "required": [
-                            "background_and_context",
-                            "objectives_and_problems",
-                            "evaluation_criteria",
-                            "rules_and_guidelines",
+                            "company_name",
+                            "company_overview",
+                            "objective",
                             "scope_of_work",
                             "questions_to_answer"
                         ],
@@ -162,12 +153,11 @@ def format_breakdown_output(breakdown: Dict[str, str]) -> str:
     """Format the breakdown results in a readable format."""
     
     category_titles = {
-        "background_and_context": "1. BACKGROUND & CONTEXT",
-        "objectives_and_problems": "2. OBJECTIVES/PROBLEM STATEMENTS",
-        "evaluation_criteria": "3. EVALUATION CRITERIA & DECISION LOGIC",
-        "rules_and_guidelines": "4. RULES/RESPONSE GUIDELINES/FORMAT INSTRUCTIONS",
-        "scope_of_work": "5. STATEMENT OF NEED/SCOPE OF WORK",
-        "questions_to_answer": "6. QUESTIONS THAT NEED TO BE ANSWERED"
+        "company_name": "1. COMPANY NAME",
+        "company_overview": "2. COMPANY OVERVIEW",
+        "objective": "3. OBJECTIVE",
+        "scope_of_work": "4. SCOPE OF WORK",
+        "questions_to_answer": "5. QUESTIONS THAT NEED TO BE ANSWERED"
     }
     
     output = "\n" + "="*80 + "\n"

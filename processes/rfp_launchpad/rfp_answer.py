@@ -30,7 +30,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # Configuration
 EMBEDDING_MODEL = "text-embedding-3-small"
 RESPONSE_MODEL = "gpt-5-mini"
-TOP_K = 20  # Number of context chunks to retrieve per question
+TOP_K = 10  # Number of context chunks to retrieve per question
 
 
 def generate_query_embedding(query: str) -> List[float]:
