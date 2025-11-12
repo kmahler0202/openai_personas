@@ -420,3 +420,179 @@ def send_rfp_answers_email(
     except Exception as e:
         print(f"❌ Failed to send RFP answers email: {e}")
         raise
+
+
+def send_sme_assignment_email(
+    gmail_service,
+    sme: dict,
+    prospect_name: str,
+    rfp_drive_link: str,
+    breakdown: dict,
+    assigned_qa_pairs: list
+) -> Dict[str, Any]:
+    """
+    Send an email to an SME with RFP questions and AI-generated answers for review.
+    
+    This function sends a professionally formatted email with:
+    - Prospect information and RFP link
+    - Company overview, objective, and scope of work from breakdown
+    - Questions with AI-generated answers for SME to review and refine
+    - Confidence scores for each answer
+    
+    Args:
+        gmail_service: Authenticated Gmail API service client
+        sme: Dictionary containing SME info (full_name, role, department, email)
+        prospect_name: Name of the company/prospect who sent the RFP
+        rfp_drive_link: Google Drive link to the RFP document
+        breakdown: RFP breakdown dict containing company_overview, objective, scope_of_work
+        assigned_qa_pairs: List of answer dicts (question, answer, confidence, sources)
+    
+    Returns:
+        dict: Response from Gmail API
+    """
+    
+    recipient_email = "kmahler@themxgroup.com"
+    sme_name = sme["full_name"]
+    num_questions = len(assigned_qa_pairs)
+    
+    subject = f"RFP Review: {prospect_name} - {num_questions} AI-Generated Answer{'s' if num_questions != 1 else ''} for Review"
+    
+    # Format questions and answers as HTML
+    qa_html = ""
+    for i, qa in enumerate(assigned_qa_pairs, 1):
+        question = qa.get('question', 'N/A')
+        answer = qa.get('answer', 'N/A')
+        confidence = qa.get('confidence', 'unknown')
+        sources = qa.get('sources', [])
+        
+        # Confidence badge styling
+        confidence_colors = {
+            'high': {'bg': '#d1fae5', 'text': '#065f46', 'emoji': '🟢'},
+            'medium': {'bg': '#fef3c7', 'text': '#92400e', 'emoji': '🟡'},
+            'low': {'bg': '#fee2e2', 'text': '#991b1b', 'emoji': '🔴'}
+        }
+        conf_style = confidence_colors.get(confidence, confidence_colors['medium'])
+        
+        qa_html += f"""
+        <div style="background-color: #ffffff; padding: 20px; margin: 20px 0; border: 2px solid #e5e7eb; border-radius: 8px;">
+          <!-- Question Header -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3 style="margin: 0; color: #1f2937;">Question {i}</h3>
+            <span style="background-color: {conf_style['bg']}; color: {conf_style['text']}; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: 600;">
+              {conf_style['emoji']} {confidence.upper()} CONFIDENCE
+            </span>
+          </div>
+          
+          <!-- Question -->
+          <div style="background-color: #f3f4f6; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+            <p style="margin: 0; color: #374151; font-weight: 600; font-size: 15px;">{question}</p>
+          </div>
+          
+          <!-- AI-Generated Answer -->
+          <div style="background-color: #eff6ff; padding: 15px; border-radius: 6px; border-left: 4px solid #3b82f6;">
+            <p style="margin: 0 0 10px 0; color: #1e40af; font-weight: 600; font-size: 13px;">🤖 AI-GENERATED ANSWER:</p>
+            <p style="margin: 0; color: #1e3a8a; line-height: 1.6; white-space: pre-wrap;">{answer}</p>
+          </div>
+          
+          <!-- Sources (if available) -->
+          {f'<p style="margin: 15px 0 0 0; color: #6b7280; font-size: 12px;"><strong>Sources:</strong> {", ".join(sources[:3])}</p>' if sources else ''}
+        </div>
+        """
+    
+    body_html = f"""
+    <html>
+      <body style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px;">
+        <!-- Header -->
+        <div style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); padding: 30px; border-radius: 8px; margin-bottom: 30px;">
+          <h1 style="color: white; margin: 0; font-size: 28px;">📋 New RFP Assignment</h1>
+          <p style="color: #dbeafe; margin: 10px 0 0 0; font-size: 16px;">You've been assigned questions from {prospect_name}</p>
+        </div>
+
+        <!-- Greeting -->
+        <p style="font-size: 16px; color: #1f2937;">Hi {sme_name},</p>
+        <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">
+          You've been identified as the subject matter expert best suited to <strong>review and refine {num_questions} AI-generated answer{'s' if num_questions != 1 else ''}</strong> 
+          from an RFP we received from <strong>{prospect_name}</strong>.
+        </p>
+        <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">
+          Our AI system has drafted initial responses based on our knowledge base. Your expertise is needed to review, validate, and enhance these answers.
+        </p>
+
+        <!-- RFP Document Link -->
+        <div style="background-color: #eff6ff; padding: 20px; border-radius: 8px; margin: 25px 0; border: 2px solid #3b82f6;">
+          <h3 style="margin-top: 0; color: #1e40af;">📄 RFP Document</h3>
+          <p style="margin: 10px 0;">
+            <a href="{rfp_drive_link}" target="_blank" style="color: #2563eb; font-weight: bold; text-decoration: none; font-size: 16px;">
+              🔗 View RFP in Google Drive →
+            </a>
+          </p>
+        </div>
+
+        <!-- Company Overview -->
+        <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 25px 0;">
+          <h3 style="margin-top: 0; color: #1f2937;">🏢 Company Overview</h3>
+          <p style="color: #4b5563; line-height: 1.6; margin: 0;">{breakdown.get('company_overview', 'Not provided')}</p>
+        </div>
+
+        <!-- Objective -->
+        <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 25px 0;">
+          <h3 style="margin-top: 0; color: #92400e;">🎯 Objective</h3>
+          <p style="color: #78350f; line-height: 1.6; margin: 0;">{breakdown.get('objective', 'Not provided')}</p>
+        </div>
+
+        <!-- Scope of Work -->
+        <div style="background-color: #f0fdf4; padding: 20px; border-radius: 8px; margin: 25px 0;">
+          <h3 style="margin-top: 0; color: #065f46;">📦 Scope of Work</h3>
+          <p style="color: #064e3b; line-height: 1.6; margin: 0;">{breakdown.get('scope_of_work', 'Not provided')}</p>
+        </div>
+
+        <!-- Questions & AI Answers -->
+        <div style="margin: 30px 0;">
+          <h2 style="color: #1f2937; border-bottom: 3px solid #3b82f6; padding-bottom: 10px;">Questions & AI-Generated Answers ({num_questions})</h2>
+          <p style="color: #6b7280; font-size: 14px; margin-top: 10px;">Review each answer below. You can approve, refine, or completely rewrite as needed.</p>
+          {qa_html}
+        </div>
+
+        <!-- Next Steps -->
+        <div style="background-color: #fef2f2; padding: 20px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #ef4444;">
+          <h3 style="margin-top: 0; color: #991b1b;">⚡ Next Steps</h3>
+          <ol style="color: #7f1d1d; line-height: 1.8; margin: 10px 0;">
+            <li>Review the RFP document using the link above</li>
+            <li>Read through the company overview, objective, and scope of work</li>
+            <li>Review each AI-generated answer above</li>
+            <li>For each answer:
+              <ul style="margin: 8px 0;">
+                <li><strong>Approve</strong> if accurate and complete</li>
+                <li><strong>Refine</strong> if mostly correct but needs adjustments</li>
+                <li><strong>Rewrite</strong> if significantly incorrect or incomplete</li>
+              </ul>
+            </li>
+            <li>Reply to this email with your reviewed/refined answers</li>
+          </ol>
+        </div>
+
+        <!-- Footer -->
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e5e7eb; text-align: center; color: #9ca3af; font-size: 14px;">
+          <p>Generated by RFP Launchpad • AI-Powered RFP Response System</p>
+          <p style="margin: 5px 0;">You received this because you were identified as the best SME for these questions</p>
+        </div>
+      </body>
+    </html>
+    """
+    
+    message = MIMEText(body_html, "html")
+    message["to"] = recipient_email
+    message["subject"] = subject
+    
+    raw = base64.urlsafe_b64encode(message.as_bytes()).decode()
+    
+    try:
+        sent = gmail_service.users().messages().send(
+            userId="me",
+            body={"raw": raw}
+        ).execute()
+        print(f"📧 SME assignment email sent to {sme_name} ({recipient_email}) - Message ID: {sent['id']}")
+        return sent
+    except Exception as e:
+        print(f"❌ Failed to send SME assignment email: {e}")
+        raise

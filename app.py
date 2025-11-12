@@ -21,6 +21,7 @@ from processes.rfp_launchpad.identify_sme import identify_sme
 
 from services import get_google_services, send_deck_with_attachment, send_rfp_answers_email
 from services.gdrive_service import extract_pdf_text_from_drive
+from services.gmail_service import send_sme_assignment_email
 
 # ---------- Bootstrap ----------
 load_dotenv()
@@ -146,16 +147,72 @@ def forms_webhook():
                 breakdown = breakdown_rfp(pdf_text)
                 print(f"✅ RFP breakdown complete")
 
-                # Identify the best SME
+                # Step 1: Identify SME for each question and build assignment map
+                print("\n🔍 Identifying SMEs for each question...")
+                sme_assignments = {}  # {sme_email: {sme_info: dict, questions: [str]}}
+                question_to_sme = {}  # {question: sme_email} for later matching
+                
                 for question in breakdown["questions_to_answer"]:
                     sme = identify_sme(question)
-                    print(f"✅ SME identified: {sme['full_name']} ({sme['role']}, {sme['department']}, {sme['email']})")
+                    sme_email = sme['email']
+                    
+                    # Initialize SME entry if not exists
+                    if sme_email not in sme_assignments:
+                        sme_assignments[sme_email] = {
+                            'sme_info': sme,
+                            'questions': []
+                        }
+                    
+                    # Add question to this SME's list
+                    sme_assignments[sme_email]['questions'].append(question)
+                    question_to_sme[question] = sme_email
+                    
+                    print(f"✅ {sme['full_name']} assigned question: {question[:80]}...")
                 
-                # Answer the RFP questions
+                print(f"\n📊 SME Assignment Summary:")
+                for email, data in sme_assignments.items():
+                    print(f"  - {data['sme_info']['full_name']}: {len(data['questions'])} question(s)")
+                
+                # Step 2: Answer all RFP questions with AI
+                print("\n🤖 Generating AI answers for all questions...")
                 result = answer_rfp_questions(breakdown["questions_to_answer"])
                 answers = result["answers"]
                 metadata = result["metadata"]
                 print(f"✅ RFP questions answered: {len(answers)} questions")
+                
+                # Step 3: Group answers by SME
+                print("\n📬 Grouping answers by SME...")
+                sme_qa_pairs = {}  # {sme_email: [answer_dicts]}
+                
+                for answer in answers:
+                    question = answer['question']
+                    assigned_sme_email = question_to_sme.get(question)
+                    
+                    if assigned_sme_email:
+                        if assigned_sme_email not in sme_qa_pairs:
+                            sme_qa_pairs[assigned_sme_email] = []
+                        sme_qa_pairs[assigned_sme_email].append(answer)
+                
+                # Step 4: Send one email per SME with their Q&A pairs
+                print("\n📧 Sending assignment emails to SMEs...")
+                prospect_name = breakdown.get('company_name', 'Unknown Company')
+                rfp_link = f"https://drive.google.com/file/d/{file_id}/view"
+                
+                for sme_email, qa_pairs in sme_qa_pairs.items():
+                    sme_info = sme_assignments[sme_email]['sme_info']
+                    try:
+                        send_sme_assignment_email(
+                            gmail_service=gmail_service,
+                            sme=sme_info,
+                            prospect_name=prospect_name,
+                            rfp_drive_link=rfp_link,
+                            breakdown=breakdown,
+                            assigned_qa_pairs=qa_pairs
+                        )
+                        print(f"✅ Email sent to {sme_info['full_name']} with {len(qa_pairs)} Q&A pair(s)")
+                    except Exception as sme_email_error:
+                        print(f"⚠️ Failed to send email to {sme_info['full_name']}: {sme_email_error}")
+                        # Continue with other SMEs even if one fails
                 
                 # Send email with results
                 recipient_email = form_data.get("email")
